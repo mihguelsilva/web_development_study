@@ -19,18 +19,16 @@ document.addEventListener("DOMContentLoaded", function() {
     // button icon
     let buttonIcon = document.createElement("i");
     buttonIcon.setAttribute("class", "fa fa-bars");
-    // create b
-    let b = document.createElement("b");
-    b.append(" Summary");
+    buttonIcon.style.transition = "0.5s";
     // add icon to button
     buttonSummary.append(buttonIcon);
-    buttonSummary.append(b);
+    buttonSummary.append(" Summary");
     // section summary
     let sectionSummary = document.createElement("section");
     sectionSummary.setAttribute("id", "summary");
     sectionSummary.style.width = "100%";
     sectionSummary.style.color = "white";
-    sectionSummary.style.height = "400px";
+    sectionSummary.style.maxHeight = "400px";
     sectionSummary.style.display = "none";
     sectionSummary.style.backgroundColor = "rgba(1,1,1,.3)";
     sectionSummary.style.overflow = "auto";
@@ -52,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	aSummary.style.textDecoration = "none";
 	aSummary.style.boder = "1px solid rgba(255,255,255,.1)";
 	aSummary.style.padding = "5px";
+	aSummary.style.transition = "0.5s";
 	// append a summary at section summary
 	sectionSummary.append(aSummary);
     });
@@ -64,6 +63,15 @@ document.addEventListener("DOMContentLoaded", function() {
 	    sectionSummary.style.display = "none";
 	};
     });
+    // button summary hover
+    buttonSummary.addEventListener("mouseover", function(e) {
+	e.target.style.backgroundColor = "rgba(1,1,1,.4)";
+	buttonIcon.style.backgroundColor = "rgba(1,1,1,.0)";
+    });
+    buttonSummary.addEventListener("mouseout", function(e) {
+	e.target.style.backgroundColor = "rgba(1,1,1,.8)";
+	buttonIcon.style.backgroundColor = "rgba(1,1,1,.0)";
+    });
     // a summary hover
     let aClassSummary = document.querySelectorAll("a.summary");
     aClassSummary.forEach(function(element, index) {
@@ -74,4 +82,24 @@ document.addEventListener("DOMContentLoaded", function() {
 	    e.target.style.backgroundColor = "rgba(1,1,1,.0)";
 	});
     });
+    // a return to main page
+    let aMenu = document.createElement("a");
+    aMenu.append("Main Page");
+    aMenu.setAttribute("id", "main_page");
+    aMenu.setAttribute("href", "/");
+    aMenu.style.textDecoration = "none";
+    aMenu.style.color = "white";
+    aMenu.style.display = "block";
+    aMenu.style.backgroundColor = "rgba(123,45,92,.9)";
+    aMenu.style.textAlign = "center";
+    aMenu.style.transition = "0.5s";
+    aMenu.addEventListener("mouseover", function(e) {
+	e.target.style.backgroundColor = "rgba(123,45,92,.1)";
+	e.target.style.color = "black";
+    });
+    aMenu.addEventListener("mouseout", function(e) {
+	e.target.style.backgroundColor = "rgba(123,45,92,.9)";
+	e.target.style.color = "white";
+    });
+    asideSummary.append(aMenu);
 });

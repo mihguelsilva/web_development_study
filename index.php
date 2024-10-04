@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="/styles/notebook-default.css">
 	<title>Main Page</title>
     </head>
-    <body>
+    <body id="lightgrey">
 	<header id="menu">
 	    <section id="logo">
 		<header></header>
