@@ -50,19 +50,15 @@
     }
 
     aside#summary {
-	padding: 10px;
 	margin: 15px;
 	position: fixed;
-	background-color: rgba(1,1,1,.7);
-	width: 15%;
-	height: 300px;
-	color: white;
-	font-family: Arial;
 	overflow: auto;
     }
 
     aside#summary h2 {
 	text-align: center;
+	display: block;
+	margin-bottom: 5px;
     }
 
     section#content {
@@ -87,9 +83,39 @@
     p.content {
 	font-size: 14pt;
 	font-family: sans-serif;
+	text-align: justify;
+	line-height: 30px;
     }
 
     a.summary {
 	display: block;
+    }
+
+    nav.menu-example ul.menu-example {
+	list-style: none;
+    }
+    nav.menu-example button.example {
+	margin-top: 10px;
+	width: 250px;
+	height: 35px;
+	font-size: 14pt;
+	background-color: none;
+	outline:none;
+	border:none;
+	background-color: rgba(1,1,1,.4);
+	cursor: pointer;
+	transition: 0.5s;
+    }
+    nav.menu-example button.example:hover {
+	background-color: rgba(1,1,1,.5);
+    }
+    nav.menu-example div.example-sub {
+	display: none;
+    }
+    
+    ul.content {
+	margin: 10px;
+	font-size: 14pt;
+	font-family: Arial;
     }
 }

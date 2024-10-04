@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="/styles/default.css">
     <link rel="stylesheet" href="/styles/notebook-default.css">
     <link rel="stylesheet" href="/styles/module_01/table.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="/js/default.js"></script>
+    <script src="/js/summary.js"></script>
     <title>Tables</title>
   </head>
 
@@ -22,11 +24,10 @@
     </header>
     <main id="content">
       <aside id="summary">
-	<h2>Summary</h2>
       </aside>
       <article id="content">
 	<section id="content">
-	  <h2 class="title" id="table-tag" name="title">&lt;table&gt;&lt;/table&gt;</h2>
+	  <h2 class="title" id="table-tag" name="table">&lt;table&gt;&lt;/table&gt;</h2>
 	  <p class="content">
 	    To create an table, we must declare a <mark>table</mark> tag.
 	  </p>
@@ -50,6 +51,352 @@
 	  <h2 class="title" id="tag-td" name="td">&lt;td&gt;&lt;/td&gt;</h2>
 	  <p class="content">
 	    To create a column, we must declare <mark>&lt;td&gt;&lt;/td&gt;</mark> tag.
+	  </p>
+	  <section class="code">
+	    <code>
+	      &lt;table&gt;<br>
+	      &nbsp;&nbsp;&lt;tr&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;&lt;/td&gt;<br>
+	      &nbsp;&nbsp;&lt;/tr&gt;<br>
+	      &lt;/table&gt;
+	    </code>
+	  </section>
+	  <h2 class="title" id="tag-caption" name="caption">&lt;caption&gt;&lt;/caption&gt;</h2>
+	  <p class="content">
+	    We can insert a title into an table. To do this, we must use <mark>&lt;caption&gt;&lt;/caption&gt;</mark> tag.
+	  </p>
+	  <section class="code">
+	    <h4>HTML Code</h4>
+	    <code>
+	      &lt;table&gt;<br>
+	      &lt;caption&gt;Table's title&lt;/caption&gt;<br>
+	      &nbsp;&nbsp;&lt;tr&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;first line, first column&lt;/td&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;first line, second column&lt;/td&gt;<br>
+	      &nbsp;&nbsp;&lt;/tr&gt;<br>
+	      &lt;/table&gt;
+	    </code>
+	    <h4>Result</h4>
+	    <table>
+	      <caption>Table's title</caption>
+	      <tr>
+		<td>first line, first column</td>
+		<td>first line, second column</td>
+	      </tr>
+	    </table>
+	  </section>
+	  <h2 class="title" id="boder_collape_separate" name="border-collapse: separate">boder-collapse: separate</h2>
+	  <p class="content">
+	    Separate it's the default for border-collapse table's attribute. This attribute maintain table's lines and columns
+	    separated.
+	  </p>
+	  <section class="code">
+	    <h4>HTML Code</h4>
+	    <code>
+	      &lt;table&gt;<br>
+	      &lt;caption&gt;Table's title&lt;/caption&gt;<br>
+	      &nbsp;&nbsp;&lt;tr&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;first line, first column&lt;/td&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;first line, second column&lt;/td&gt;<br>
+	      &nbsp;&nbsp;&lt;/tr&gt;<br>
+	      &nbsp;&nbsp;&lt;tr&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;second line, first column&lt;/td&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;second line, second column&lt;/td&gt;<br>
+	      &nbsp;&nbsp;&lt;/tr&gt;<br>
+	      &lt;/table&gt;
+	    </code>
+	    <h4>CSS Code</h4>
+	    <code>
+	      table {<br>
+	      &nbsp;&nbsp;border-collapse: separate;<br>
+	      &nbsp;&nbsp;border: 1px solid black;<br>
+	      }<br>
+	      table td {<br>
+	      &nbsp;&nbsp;border: 1px solid black;<br>
+	      }
+	    </code>
+	    <h4>Result</h4>
+	    <table style='border-collapse: separate;border: 1px solid black;'>
+	      <caption>Table's title</caption>
+	      <tr>
+		<td style='border: 1px solid black;'>first line, first column</td>
+		<td style='border: 1px solid black;'>first line, second column</td>
+	      </tr>
+	      <tr>
+		<td style='border: 1px solid black;'>second line, first column</td>
+		<td style='border: 1px solid black;'>second line, second column</td>
+	      </tr>
+	    </table>
+	  </section>
+	  <h2 class="title" id="border_collapse_collapse" name="border-collapse: collapse">border-collapse: collapse</h2>
+	  <section class="code">
+	    <h4>HTML Code</h4>
+	    <code>
+	      &lt;table&gt;<br>
+	      &lt;caption&gt;Table's title&lt;/caption&gt;<br>
+	      &nbsp;&nbsp;&lt;tr&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;first line, first column&lt;/td&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;first line, second column&lt;/td&gt;<br>
+	      &nbsp;&nbsp;&lt;/tr&gt;<br>
+	      &nbsp;&nbsp;&lt;tr&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;first line, first column&lt;/td&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;first line, second column&lt;/td&gt;<br>
+	      &nbsp;&nbsp;&lt;/tr&gt;<br>
+	      &lt;/table&gt;
+	    </code>
+	    <h4>CSS Code</h4>
+	    <code>
+	      table {<br>
+	      &nbsp;&nbsp;border-collapse: collapse;<br>
+	      &nbsp;&nbsp;border: 1px solid black;<br>
+	      }<br>
+	      table td {<br>
+	      &nbsp;&nbsp;border: 1px solid black;<br>
+	      }
+	    </code>
+	    <h4>Result</h4>
+	    <table style='border-collapse: collapse;border: 1px solid black;'>
+	      <caption>Table's title</caption>
+	      <tr>
+		<td style='border: 1px solid black;'>first line, first column</td>
+		<td style='border: 1px solid black;'>first line, second column</td>
+	      </tr>
+	      <tr>
+		<td style='border: 1px solid black;'>second line, first column</td>
+		<td style='border: 1px solid black;'>second line, second column</td>
+	      </tr>
+	    </table>
+	  </section>
+	  <h2 class="title" id="colspan" name="colspan">colspan</h2>
+	  <p class="content">
+	    To make a column occupy two collumns, we must use <mark>colspan</mark> table's attribute.
+	  </p>
+	  <section class="code">
+	    <h4>HTML Code</h4>
+	    <code>
+	      &lt;table&gt;<br>
+	      &lt;caption&gt;Table's title&lt;/caption&gt;<br>
+	      &nbsp;&nbsp;&lt;tr&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;td colspan='2'&gt;first line, first column&lt;/td&gt;<br>
+	      &nbsp;&nbsp;&lt;/tr&gt;<br>
+	      &nbsp;&nbsp;&lt;tr&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;first line, first column&lt;/td&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;first line, second column&lt;/td&gt;<br>
+	      &nbsp;&nbsp;&lt;/tr&gt;<br>
+	      &lt;/table&gt;
+	    </code>
+	    <h4>CSS Code</h4>
+	    <code>
+	      table {<br>
+	      &nbsp;&nbsp;border-collapse: collapse;<br>
+	      &nbsp;&nbsp;border: 1px solid black;<br>
+	      }<br>
+	      table td {<br>
+	      &nbsp;&nbsp;border: 1px solid black;<br>
+	      }
+	    </code>
+	    <h4>Result</h4>
+	    <table style='border-collapse: collapse;border: 1px solid black;'>
+	      <caption>Table's title</caption>
+	      <tr>
+		<td style='border: 1px solid black;' colspan='2'>first line, first column</td>
+	      </tr>
+	      <tr>
+		<td style='border: 1px solid black;'>second line, first column</td>
+		<td style='border: 1px solid black;'>second line, second column</td>
+	      </tr>
+	    </table>
+	  </section>
+	  <h2 class="title" id="rowspan" name="rowspan">rowspan</h2>
+	  <p class="content">
+	    To make a row occupy two rows, we must use <mark>rowspan</mark> table's attribute.
+	  </p>
+	  <section class="code">
+	    <h4>HTML Code</h4>
+	    <code>
+	      &lt;table&gt;<br>
+	      &lt;caption&gt;Table's title&lt;/caption&gt;<br>
+	      &nbsp;&nbsp;&lt;tr&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;td rowspan='2'&gt;first line, first column&lt;/td&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;first line, second column&lt;/td&gt;<br>
+	      &nbsp;&nbsp;&lt;/tr&gt;<br>
+	      &nbsp;&nbsp;&lt;tr&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;first line, second column&lt;/td&gt;<br>
+	      &nbsp;&nbsp;&lt;/tr&gt;<br>
+	      &lt;/table&gt;
+	    </code>
+	    <h4>CSS Code</h4>
+	    <code>
+	      table {<br>
+	      &nbsp;&nbsp;border-collapse: collapse;<br>
+	      &nbsp;&nbsp;border: 1px solid black;<br>
+	      }<br>
+	      table td {<br>
+	      &nbsp;&nbsp;border: 1px solid black;<br>
+	      }
+	    </code>
+	    <h4>Result</h4>
+	    <table style='border-collapse: collapse;border: 1px solid black;'>
+	      <caption>Table's title</caption>
+	      <tr>
+		<td style='border: 1px solid black;' rowspan='2'>first line, first column</td>
+		<td style='border: 1px solid black;'>first line, second column</td>
+	      </tr>
+	      <tr>
+		<td style='border: 1px solid black;'>second line, second column</td>
+	      </tr>
+	    </table>
+	  </section>
+	  <h2 class='title' id='vertical_align' name='vertical_align'>vertical-align</h2>
+	  <p class='content'>
+	    This attribute align in vertical table's texts. We can define three diferent values:
+	  </p>
+	  <ul class='content'>
+	    <li><b>middle</b>: default value;</li>
+	    <li><b>top</b>: set text at top;</li>
+	    <li><b>bottom</b>: set text at bottom</li>
+	  </ul>
+	  <nav class='menu-example' id='table'>
+	    <ul class='menu-example'>
+	      <li class='menu-example'><button class='example'>Top</button>
+		<div class='example-sub'>
+		  <section class="code">
+		    <h4>HTML Code</h4>
+		    <code>
+		      &lt;table&gt;<br>
+		      &lt;caption&gt;Table's title&lt;/caption&gt;<br>
+		      &nbsp;&nbsp;&lt;tr&gt;<br>
+		      &nbsp;&nbsp;&nbsp;&nbsp;&lt;td rowspan='2' id='vertical'&gt;first line, first column&lt;/td&gt;<br>
+		      &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;first line, second column&lt;/td&gt;<br>
+		      &nbsp;&nbsp;&lt;/tr&gt;<br>
+		      &nbsp;&nbsp;&lt;tr&gt;<br>
+		      &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;first line, second column&lt;/td&gt;<br>
+		      &nbsp;&nbsp;&lt;/tr&gt;<br>
+		      &lt;/table&gt;
+		    </code>
+		    <h4>CSS Code</h4>
+		    <code>
+		      table {<br>
+		      &nbsp;&nbsp;border-collapse: collapse;<br>
+		      &nbsp;&nbsp;border: 1px solid black;<br>
+		      }<br>
+		      table td {<br>
+		      &nbsp;&nbsp;border: 1px solid black;<br>
+		      }<br>
+		      table td#vertical {<br>
+		      &nbsp;&nbsp;vertical-align:top;<br>
+		      }
+		    </code>
+		    <h4>Result</h4>
+		    <table style='border-collapse: collapse;border: 1px solid black;'>
+		      <caption>Table's title</caption>
+		      <tr>
+			<td style='border: 1px solid black; vertical-align:top;' rowspan='2'>first line, first column</td>
+			<td style='border: 1px solid black;'>first line, second column</td>
+		      </tr>
+		      <tr>
+			<td style='border: 1px solid black;'>second line, second column</td>
+		      </tr>
+		    </table>
+		  </section>
+		</div>
+	      </li>
+	      <li class='menu-example'><button class='example'>Bottom</button>
+		<div class='example-sub'>
+		  <section class="code">
+		    <h4>HTML Code</h4>
+		    <code>
+		      &lt;table&gt;<br>
+		      &lt;caption&gt;Table's title&lt;/caption&gt;<br>
+		      &nbsp;&nbsp;&lt;tr&gt;<br>
+		      &nbsp;&nbsp;&nbsp;&nbsp;&lt;td rowspan='2' id='vertical'&gt;first line, first column&lt;/td&gt;<br>
+		      &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;first line, second column&lt;/td&gt;<br>
+		      &nbsp;&nbsp;&lt;/tr&gt;<br>
+		      &nbsp;&nbsp;&lt;tr&gt;<br>
+		      &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;first line, second column&lt;/td&gt;<br>
+		      &nbsp;&nbsp;&lt;/tr&gt;<br>
+		      &lt;/table&gt;
+		    </code>
+		    <h4>CSS Code</h4>
+		    <code>
+		      table {<br>
+		      &nbsp;&nbsp;border-collapse: collapse;<br>
+		      &nbsp;&nbsp;border: 1px solid black;<br>
+		      }<br>
+		      table td {<br>
+		      &nbsp;&nbsp;border: 1px solid black;<br>
+		      }<br>
+		      table td#vertical {<br>
+		      &nbsp;&nbsp;vertical-align:bottom;<br>
+		      }
+		    </code>
+		    <h4>Result</h4>
+		    <table style='border-collapse: collapse;border: 1px solid black;'>
+		      <caption>Table's title</caption>
+		      <tr>
+			<td style='border: 1px solid black; vertical-align:bottom;' rowspan='2'>first line, first column</td>
+			<td style='border: 1px solid black;'>first line, second column</td>
+		      </tr>
+		      <tr>
+			<td style='border: 1px solid black;'>second line, second column</td>
+		      </tr>
+		    </table>
+		  </section>
+		</div>
+	      </li>
+	      <li class='menu-example'><button class='example'>Middle</button>
+		<div class='example-sub'>
+		  <section class="code">
+		    <h4>HTML Code</h4>
+		    <code>
+		      &lt;table&gt;<br>
+		      &lt;caption&gt;Table's title&lt;/caption&gt;<br>
+		      &nbsp;&nbsp;&lt;tr&gt;<br>
+		      &nbsp;&nbsp;&nbsp;&nbsp;&lt;td rowspan='2' id='vertical'&gt;first line, first column&lt;/td&gt;<br>
+		      &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;first line, second column&lt;/td&gt;<br>
+		      &nbsp;&nbsp;&lt;/tr&gt;<br>
+		      &nbsp;&nbsp;&lt;tr&gt;<br>
+		      &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;first line, second column&lt;/td&gt;<br>
+		      &nbsp;&nbsp;&lt;/tr&gt;<br>
+		      &lt;/table&gt;
+		    </code>
+		    <h4>CSS Code</h4>
+		    <code>
+		      table {<br>
+		      &nbsp;&nbsp;border-collapse: collapse;<br>
+		      &nbsp;&nbsp;border: 1px solid black;<br>
+		      }<br>
+		      table td {<br>
+		      &nbsp;&nbsp;border: 1px solid black;<br>
+		      }<br>
+		      table td#vertical {<br>
+		      &nbsp;&nbsp;vertical-align:middle;<br>
+		      }
+		    </code>
+		    <h4>Result</h4>
+		    <table style='border-collapse: collapse;border: 1px solid black;'>
+		      <caption>Table's title</caption>
+		      <tr>
+			<td style='border: 1px solid black; vertical-align:middle;' rowspan='2'>first line, first column</td>
+			<td style='border: 1px solid black;'>first line, second column</td>
+		      </tr>
+		      <tr>
+			<td style='border: 1px solid black;'>second line, second column</td>
+		      </tr>
+		    </table>
+		  </section>
+		</div>
+	      </li>
+	    </ul>
+	  </nav>
+	  <h2 class='title' id='thead' name='thead'>&lt;thead&gt;&lt;/thead&gt;</h2>
+	  <p class='content'>
+	  </p>
+	  <h2 class='title' id='tbody' name='tbody'>&lt;tbody&gt;&lt;/tbody&gt;</h2>
+	  <p class='content'>
+	  </p>
+	  <h2 class='title' id='tfoot' name='tfoot'>&lt;tfoot&gt;&lt;/tfoot&gt;</h2>
+	  <p class='content'>
 	  </p>
 	</section>
 	<section id="practice">
