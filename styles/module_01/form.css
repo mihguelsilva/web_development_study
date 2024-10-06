@@ -1,1 +1,75 @@
 @charset 'utf-8';
+form#practice {
+    width: 800px;
+    margin: 30px auto;
+}
+figure#content-image {
+    width: 100px;
+    float: left;
+    padding: 15px 25px;
+}
+table#table-1 {
+    float: right;
+    width: 650px;
+    padding: 4px;
+}
+table#table-2 {
+    width: 650px;
+    float: right;
+    padding: 4px;
+}
+h2.practice-form {
+    clear: both; /*this property removes float:left, inherit from table*/
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0,0,0,.3);
+    font-size: 13pt;
+}
+table.table-form td {
+    width: 100px;
+    padding: 2px 8px;
+    height: 80px;
+}
+table.table-form label {
+    display: block;
+    padding: 8px 0px;
+}
+table.table-form input, table.table-form select, input#submit-practice {
+    height: 30px;
+    width: 170px;
+    font-size: 13pt;
+}
+table#table-1 input#input-name {
+    width: 380px;
+}
+table#table-1 input[type='checkbox'] {
+    float: left;
+    width: 15px;
+    margin-right: 7px;
+}
+label#term {
+    margin-top: -3px;
+    cursor: pointer;
+}
+input#form-address, input#form-neighborhood {
+    width: 350px;
+}
+input#submit-practice {
+    background-color: red;
+    border: none;
+    height: 50px;
+    width: 200px;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    display: block;
+    float: right;
+}
+input#submit-practice:hover {
+    background-color: yellow;
+    transition: 0.5s;
+    color: black;
+    margin-top: 15px;
+}
+section#practice {
+    float: left;
+}

@@ -165,10 +165,703 @@
 	      <input type='text' placeholder='text tip' maxlength='4'>
 	    </form>
 	  </section>
-	  
+	  <h2 class='title' id='input_autofocus' name='input_autofocus'>&lt;input autofocus&gt;</h2>
+	  <p class='content'>
+	    Define which input must be filled first, we must use <mark>autofocus</mark> attribute.
+	  </p>
+	  <section class='code'>
+	    <h4>HTML Code</h4>
+	    <code>
+	      &lt;form&gt;<br>
+	      &nbsp;&nbsp;Name: &lt;input type='text' placeholder='Name complete'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;Address: &lt;input type='text' placeholder='street,number,neighborhood'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;City: &lt;input type='text'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;Phone: &lt;input type='text' autofocus&gt;<br>
+	      &lt;/form&gt;
+	    </code>
+	    <h4>Result</h4>
+	    <form>
+	      Name: <input type='text' placeholder='Name complete'><br>
+	      Address: <input type='text' placeholder='street,number,neighborhood'><br>
+	      City: <input type='text'><br>
+	      Phone: <input type='text' autofocus>
+	    </form>
+	  </section>
+	  <h2 class='title' id='input_name' name='input_name'>&lt;input name='name_input'&gt;</h2>
+	  <p class='content'>
+	    This, probably, the most important attribute, where we define a name to input.
+	    For this, we must define <mark>name</mark> attribute.
+	  </p>
+	  <div class='important'>
+	    <p>
+	      The attribute name is important when using PHP and MySQL, because, through name's value,
+	      we can manipulate, in PHP, the data inserted from user, and insert it inside database.
+	    </p>
+	  </div>
+	  <section class='code'>
+	    <h4>HTML Code</h4>
+	    <code>
+	      &lt;form&gt;<br>
+	      &nbsp;&nbsp;Name: &lt;input type='text' placeholder='Name complete' name='name'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;Address: &lt;input type='text' placeholder='street,number,neighborhood' name='address'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;City: &lt;input type='text' name='city'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;Phone: &lt;input type='text' name='phone' autofocus&gt;<br>
+	      &lt;/form&gt;
+	    </code>
+	    <h4>Result</h4>
+	    <form>
+	      Name: <input type='text' placeholder='Name complete' name='name'><br>
+	      Address: <input type='text' placeholder='street,number,neighborhood' name='address'><br>
+	      City: <input type='text' name='city'><br>
+	      Phone: <input type='text' name='phone' autofocus>
+	    </form>
+	  </section>
+	  <h2 class='title' id='input_autocomplete' name='input_autocomplete'>&lt;input autocomplete&gt;</h2>
+	  <p class='content'>
+	    When data are sent from forms, those data are saved from browsers. Sometimes, some data are
+	    used so many times, that when we access an different input, where input's name are email,
+	    automatically, appears, bellow that input, what you are tipping. When this happens, it's
+	    because that input has autocomplete's attribute set as one (on). To take off this attribute,
+	    you must set autocomplete as off.
+	  </p>
+	  <section class='code'>
+	    <h4>HTML Code</h4>
+	    <code>
+	      &lt;form&gt;<br>
+	      &nbsp;&nbsp;Name: &lt;input type='text' placeholder='Name complete' name='name' autocomplete='on'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;Address: &lt;input type='text' placeholder='street,number,neighborhood' name='address'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;City: &lt;input type='text' name='city'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;Phone: &lt;input type='text' name='phone' autofocus autocomplete='off'&gt;<br>
+	      &lt;/form&gt;
+	    </code>
+	    <h4>Result</h4>
+	    <form>
+	      Name: <input type='text' placeholder='Name complete' name='name' autocomplete='on'><br>
+	      Address: <input type='text' placeholder='street,number,neighborhood' name='address'><br>
+	      City: <input type='text' name='city'><br>
+	      Phone: <input type='text' name='phone' autofocus autocomplete='off'>
+	    </form>
+	  </section>
+	  <h2 class='title' id='tag_label' name='label'>&lt;label&gt;&lt;/label&gt;</h2>
+	  <p class='content'>
+	    We can change those legend's input for labels. For this, we must declare
+	    <mark>&lt;label&gt;&lt;/label&gt;</mark> tag.
+	  </p>
+	  <div class='important'>
+	    <p>
+	      Labels are responsible for link it's value to input, so, when user's click into
+	      input's legend, automatically, grab you to set data into input's area.
+	    </p>
+	  </div>
+	  <section class='code'>
+	    <h4>HTML Code</h4>
+	    <code>
+	      &lt;form&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='name'&gt;Name: &lt;/label&gt;&lt;input type='text' placeholder='Name complete' name='name' autocomplete='on' id='name'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='address'&gt;Address: &lt;/label&gt;&lt;input type='text' placeholder='street,number,neighborhood' name='address' id='address'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='city'&gt;City: &lt;/label&gt;&lt;input type='text' name='city' id='city'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='phone'&gt;Phone: &lt;/label&gt;&lt;input type='text' name='phone' autofocus autocomplete='off' id='phone'&gt;<br>
+	      &lt;/form&gt;
+	    </code>
+	    <h4>Result</h4>
+	    <form>
+	      <label for='name'>Name: </label><input type='text' placeholder='Name complete' name='name' autocomplete='on' id='name'><br>
+	      <label for='address'>Address: </label><input type='text' placeholder='street,number,neighborhood' name='address' id='address'><br>
+	      <label for='city'>City: </label><input type='text' name='city' id='city'><br>
+	      <label for='phone'>Phone: </label><input type='text' name='phone' autofocus autocomplete='off' id='phone'>
+	    </form>
+	  </section>
+	  <h2 class='title' id='input_type_password' name='input_type_password'>&lt;input type='password'&gt;</h2>
+	  <p class='content'>
+	    This input receives data's user, however, don't let us see what was tipped. To create this element,
+	    we must define <mark>&lt;input type='password'&gt;</mark> attribute's tag.
+	  </p>
+	  <section class='code'>
+	    <h4>HTML Code</h4>
+	    <code>
+	      &lt;form&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='name'&gt;Name: &lt;/label&gt;&lt;input type='text' placeholder='Name complete' name='name' autocomplete='on' id='name'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='address'&gt;Address: &lt;/label&gt;&lt;input type='text' placeholder='street,number,neighborhood' name='address' id='address'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='city'&gt;City: &lt;/label&gt;&lt;input type='text' name='city' id='city'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='phone'&gt;Phone: &lt;/label&gt;&lt;input type='text' name='phone' autofocus autocomplete='off' id='phone'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='password'&gt;Password: &lt;/label&gt;&lt;input type='password' name='password' id='password'&gt;<br>
+	      &lt;/form&gt;
+	    </code>
+	    <h4>Result</h4>
+	    <form>
+	      <label for='name_1'>Name: </label><input type='text' placeholder='Name complete' name='name' autocomplete='on' id='name_1'><br>
+	      <label for='address_1'>Address: </label><input type='text' placeholder='street,number,neighborhood' name='address' id='address_1'><br>
+	      <label for='city_1'>City: </label><input type='text' name='city' id='city_1'><br>
+	      <label for='phone_1'>Phone: </label><input type='text' name='phone' autofocus autocomplete='off' id='phone_1'><br>
+	      <label for='password_1'>Password: </label><input type='password' name='password' id='password_1'>
+	    </form>
+	  </section>
+	  <h2 class='title' id='input_type_email' name='input_type_email'>&lt;input type='email'&gt;</h2>
+	  <p class='content'>
+	    This input comes with some validations, and it doesn't allow you set an invalid email.
+	  </p>
+	  <section class='code'>
+	    <h4>HTML Code</h4>
+	    <code>
+	      &lt;form&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='name'&gt;Name: &lt;/label&gt;&lt;input type='text' placeholder='Name complete' name='name' autocomplete='on' id='name'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='address'&gt;Address: &lt;/label&gt;&lt;input type='text' placeholder='street,number,neighborhood' name='address' id='address'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='city'&gt;City: &lt;/label&gt;&lt;input type='text' name='city' id='city'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='phone'&gt;Phone: &lt;/label&gt;&lt;input type='text' name='phone' autofocus autocomplete='off' id='phone'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='password'&gt;Password: &lt;/label&gt;&lt;input type='password' name='password' id='password'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='email'&gt;Email: &lt;/label&gt;&lt;input type='email' name='email' id='email'&gt;<br>
+	      &lt;/form&gt;
+	    </code>
+	    <h4>Result</h4>
+	    <form>
+	      <label for='name_2'>Name: </label><input type='text' placeholder='Name complete' name='name' autocomplete='on' id='name_2'><br>
+	      <label for='address_2'>Address: </label><input type='text' placeholder='street,number,neighborhood' name='address' id='address_2'><br>
+	      <label for='city_2'>City: </label><input type='text' name='city' id='city_2'><br>
+	      <label for='phone_2'>Phone: </label><input type='text' name='phone' autofocus autocomplete='off' id='phone_2'><br>
+	      <label for='password_2'>Password: </label><input type='password' name='password' id='password_2'><br>
+	      <label for='email'>Email: </label><input type='email' name='email' id='email'>
+	    </form>
+	  </section>
+	  <h2 class='title' id='input_type_number' name='input_type_number'>&lt;input type='number'&gt;</h2>
+	  <p class='content'>
+	    This input only allows you set numbers. For this, we must declare <mark>&lt;input type='number'&gt;</mark> tag.
+	  </p>
+	  <div class='important'>
+	    <p>
+	      To limit number's insert data, we must define <mark>min</mark> and <mark>max</mark> attributes
+	    </p>
+	  </div>
+	  <section class='code'>
+	    <h4>HTML Code</h4>
+	    <code>
+	      &lt;form&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='name'&gt;Name: &lt;/label&gt;&lt;input type='text' placeholder='Name complete' name='name' autocomplete='on' id='name'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='address'&gt;Address: &lt;/label&gt;&lt;input type='text' placeholder='street,number,neighborhood' name='address' id='address'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='city'&gt;City: &lt;/label&gt;&lt;input type='text' name='city' id='city'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='phone'&gt;Phone: &lt;/label&gt;&lt;input type='text' name='phone' autofocus autocomplete='off' id='phone'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='password'&gt;Password: &lt;/label&gt;&lt;input type='password' name='password' id='password'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='email'&gt;Email: &lt;/label&gt;&lt;input type='email' name='email' id='email'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='number'&gt;Number: &lt;/label&gt;&lt;input type='number' name='number' id='number' min='5' max='10'&gt;<br>
+	      &lt;/form&gt;
+	    </code>
+	    <h4>Result</h4>
+	    <form>
+	      <label for='name_3'>Name: </label><input type='text' placeholder='Name complete' name='name' autocomplete='on' id='name_3'><br>
+	      <label for='address_3'>Address: </label><input type='text' placeholder='street,number,neighborhood' name='address' id='address_3'><br>
+	      <label for='city_3'>City: </label><input type='text' name='city' id='city_3'><br>
+	      <label for='phone_3'>Phone: </label><input type='text' name='phone' autofocus autocomplete='off' id='phone_3'><br>
+	      <label for='password_3'>Password: </label><input type='password' name='password' id='password_3'><br>
+	      <label for='email_1'>Email: </label><input type='email' name='email_1' id='email_1'><br>
+	      <label for='number'>Number: </label><input type='number' name='number' id='number' min='5' max='10'>
+	    </form>
+	  </section>
+	  <h2 class='title' id='textarea' name='textarea'>&lt;textarea&gt;&lt;/textarea&gt;</h2>
+	  <p class='content'>
+	    This element allows you insert huge data. For this, we must declare
+	    <mark>&lt;textarea&gt;&lt;/textarea&gt;</mark> tag.
+	  </p>
+	  <div class='important'>
+	    <p>
+	      We can define the rows, setting <mark>rows</mark> attribute, and define
+	      cols, setting <mark>cols</mark> attribute.
+	    </p>
+	  </div>
+	  <section class='code'>
+	    <h4>HTML Code</h4>
+	    <code>
+	      &lt;form&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='name'&gt;Name: &lt;/label&gt;&lt;input type='text' placeholder='Name complete' name='name' autocomplete='on' id='name'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='address'&gt;Address: &lt;/label&gt;&lt;input type='text' placeholder='street,number,neighborhood' name='address' id='address'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='city'&gt;City: &lt;/label&gt;&lt;input type='text' name='city' id='city'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='phone'&gt;Phone: &lt;/label&gt;&lt;input type='text' name='phone' autofocus autocomplete='off' id='phone'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='password'&gt;Password: &lt;/label&gt;&lt;input type='password' name='password' id='password'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='email'&gt;Email: &lt;/label&gt;&lt;input type='email' name='email' id='email'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='number'&gt;Number: &lt;/label&gt;&lt;input type='number' name='number' id='number' min='5' max='10'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='text'&gt;Text: &lt;/label&gt;&lt;textarea cols='5' rows='4' name='text' id='text'&gt;&lt;textarea&gt;<br>
+	      &lt;/form&gt;
+	    </code>
+	    <h4>Result</h4>
+	    <form>
+	      <label for='name_3'>Name: </label><input type='text' placeholder='Name complete' name='name' autocomplete='on' id='name_3'><br>
+	      <label for='address_3'>Address: </label><input type='text' placeholder='street,number,neighborhood' name='address' id='address_3'><br>
+	      <label for='city_3'>City: </label><input type='text' name='city' id='city_3'><br>
+	      <label for='phone_3'>Phone: </label><input type='text' name='phone' autofocus autocomplete='off' id='phone_3'><br>
+	      <label for='password_3'>Password: </label><input type='password' name='password' id='password_3'><br>
+	      <label for='email_1'>Email: </label><input type='email' name='email_1' id='email_1'><br>
+	      <label for='number'>Number: </label><input type='number' name='number' id='number' min='5' max='10'><br>
+	      <label for='text'>Text: </label><textarea cols='5' rows='4' name='text' id='text'></textarea>
+	    </form>
+	  </section>
+	  <h2 class='title' id='input_type_date' name='input_type_date'>&lt;input type='date'&gt;</h2>
+	  <p class='content'>
+	    This input shows you a calendar. For this, we must declare <mark>&lt;input type='date'&gt; attributte's tag.
+	  </p>
+	  <section class='code'>
+	    <h4>HTML Code</h4>
+	    <code>
+	      &lt;form&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='name'&gt;Name: &lt;/label&gt;&lt;input type='text' placeholder='Name complete' name='name' autocomplete='on' id='name'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='address'&gt;Address: &lt;/label&gt;&lt;input type='text' placeholder='street,number,neighborhood' name='address' id='address'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='city'&gt;City: &lt;/label&gt;&lt;input type='text' name='city' id='city'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='phone'&gt;Phone: &lt;/label&gt;&lt;input type='text' name='phone' autofocus autocomplete='off' id='phone'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='password'&gt;Password: &lt;/label&gt;&lt;input type='password' name='password' id='password'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='email'&gt;Email: &lt;/label&gt;&lt;input type='email' name='email' id='email'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='number'&gt;Number: &lt;/label&gt;&lt;input type='number' name='number' id='number' min='5' max='10'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='text'&gt;Text: &lt;/label&gt;&lt;textarea cols='5' rows='4' name='text' id='text'&gt;&lt;textarea&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='date'&gt;Date: &lt;/label&gt;&lt;input type='date' name='date' id='date'&gt;<br>
+	      &lt;/form&gt;
+	    </code>
+	    <h4>Result</h4>
+	    <form>
+	      <label for='name_4'>Name: </label><input type='text' placeholder='Name complete' name='name' autocomplete='on' id='name_4'><br>
+	      <label for='address_4'>Address: </label><input type='text' placeholder='street,number,neighborhood' name='address' id='address_4'><br>
+	      <label for='city_4'>City: </label><input type='text' name='city' id='city_4'><br>
+	      <label for='phone_4'>Phone: </label><input type='text' name='phone' autofocus autocomplete='off' id='phone_4'><br>
+	      <label for='password_4'>Password: </label><input type='password' name='password' id='password_4'><br>
+	      <label for='email_2'>Email: </label><input type='email' name='email' id='email_2'><br>
+	      <label for='number_1'>Number: </label><input type='number' name='number' id='number_1' min='5' max='10'><br>
+	      <label for='text_1'>Text: </label><textarea cols='5' rows='4' name='text' id='text_1'></textarea><br>
+	      <label for='date'>Date: </label><input type='date' name='date' id='date'>
+	    </form>
+	  </section>
+	  <h2 class='title' id='input_type_submit' name='input_type_submit'>&lt;input type='submit'&gt;</h2>
+	  <p class='content'>
+	    It's a input's button, so we can sent data inserted inside form.
+	  </p>
+	  <section class='code'>
+	    <h4>HTML Code</h4>
+	    <code>
+	      &lt;form&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='name'&gt;Name: &lt;/label&gt;&lt;input type='text' placeholder='Name complete' name='name' autocomplete='on' id='name'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='address'&gt;Address: &lt;/label&gt;&lt;input type='text' placeholder='street,number,neighborhood' name='address' id='address'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='city'&gt;City: &lt;/label&gt;&lt;input type='text' name='city' id='city'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='phone'&gt;Phone: &lt;/label&gt;&lt;input type='text' name='phone' autofocus autocomplete='off' id='phone'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='password'&gt;Password: &lt;/label&gt;&lt;input type='password' name='password' id='password'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='email'&gt;Email: &lt;/label&gt;&lt;input type='email' name='email' id='email'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='number'&gt;Number: &lt;/label&gt;&lt;input type='number' name='number' id='number' min='5' max='10'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='text'&gt;Text: &lt;/label&gt;&lt;textarea cols='5' rows='4' name='text' id='text'&gt;&lt;textarea&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='date'&gt;Date: &lt;/label&gt;&lt;input type='date' name='date' id='date'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;input type='submit' name='sent' id='sent' value='Sent'&gt;<br>
+	      &lt;/form&gt;
+	    </code>
+	    <h4>Result</h4>
+	    <form>
+	      <label for='name_5'>Name: </label><input type='text' placeholder='Name complete' name='name' autocomplete='on' id='name_5'><br>
+	      <label for='address_5'>Address: </label><input type='text' placeholder='street,number,neighborhood' name='address' id='address_5'><br>
+	      <label for='city_5'>City: </label><input type='text' name='city' id='city_5'><br>
+	      <label for='phone_5'>Phone: </label><input type='text' name='phone' autofocus autocomplete='off' id='phone_5'><br>
+	      <label for='password_5'>Password: </label><input type='password' name='password' id='password_5'><br>
+	      <label for='email_3'>Email: </label><input type='email' name='email' id='email_3'><br>
+	      <label for='number_2'>Number: </label><input type='number' name='number' id='number_2' min='5' max='10'><br>
+	      <label for='text_2'>Text: </label><textarea cols='5' rows='4' name='text' id='text_2'></textarea><br>
+	      <label for='date'>Date: </label><input type='date' name='date' id='date'><br>
+	      <input type='submit' value='Sent' name='sent' id='sent'>
+	    </form>
+	  </section>
+	  <h2 class='title' id='input_button' name='input_button'>&lt;input type='button'&gt;</h2>
+	  <p class='content'>
+	    It's another way to create a input's button.
+	  </p>
+	  <div class='important'>
+            <p>
+	      Despite being a input's button, it will not sent form's data, so,
+	      <mark>&lt;input type='button'&gt;</mark> is not the same as
+	      <mark>&lt;input type='submit'&gt;</mark>.
+            </p>
+          </div>
+	  <section class='code'>
+	    <h4>HTML Code</h4>
+            <code>
+	      &lt;form&gt;<br>
+	      &nbsp;&nbsp;Login: &lt;input type='text' name='login'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;Pass: &lt;input type='password' name='password'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;input type='button' value='Sent' name='sent'&gt;<br>
+	      &lt;/form&gt;
+            </code>
+	    <h4>Result</h4>
+	    <form>
+	      Login: <input type='text' name='login'><br>
+	      Pass: <input type='password' name='password'><br>
+	      <input type='button' value='Sent' name='sent'>
+	    </form> 
+          </section>
+	  <h2 class='title' id='input_type_radio' name='input_type_radio'>&lt;input type='radio'&gt;</h2>
+          <p class='content'>
+	    Input radio present's options, allowing only one. All inputs must have same value's name.
+          </p>
+	  <section class='code'>
+	    <h4>HTML Code</h4>
+            <code>
+	      &lt;form&gt;<br>
+	      &nbsp;&nbsp;&lt;input type='radio' name='gender' value='male'&gt; Male&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;input type='radio' name='gender' value='female'&gt; Female&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;input type='submit' name='sent' value='Sent'&gt;<br>
+	      &lt;/form&gt;
+            </code>
+	    <h4>Result</h4>
+	    <form>
+	      <input type='radio' name='gender' value='male'> Male<br>
+	      <input type='radio' name='gender' value='female'> Female<br>
+	      <input type='submit' name='sent' value='Sent'>
+	    </form> 
+          </section>
+	  <h2 class='title' id='input_type_checkbox' name='input_type_checkbox'>&lt;input type='checkbox'&gt;</h2>
+          <p class='content'>
+	    It allows us to select the options as many we want to. For this, we must declare
+	    <mark>&lt;input type='checkbox'&gt;</mark> tag's attribute.
+          </p>
+	  <div class='important'>
+            <p>
+	      &lt;input type='checkbox'&gt; it's different from &lt;input type='radio'&gt; once
+	      we're allowed to select more than one, includind everything.
+            </p>
+          </div>
+	  <section class='code'>
+	    <h4>HTML Code</h4>
+            <code>
+	      &lt;form&gt;<br>
+	      &nbsp;&nbsp;&lt;input type='checkbox' name='option1' value='1' id='option1'&gt;&lt;label for='option1'&gt;Option 1&lt;/label&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;input type='checkbox' name='option2' value='2' id='option2'&gt;&lt;label for='option2'&gt;Option 2&lt;/label&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;input type='checkbox' name='option3' value='3' id='option3'&gt;&lt;label for='option3'&gt;Option 3&lt;/label&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;input type='checkbox' name='option4' value='4' id='option4'&gt;&lt;label for='option4'&gt;Option 4&lt;/label&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;input type='submit' value='Sent' name='sent'&gt;<br>
+	      &lt;/form&gt;
+            </code>
+	    <h4>Result</h4>
+	    <form>
+	      <input type='checkbox' name='option1' value='1' id='option1'><label for='option1'>Option 1</label><br>
+	      <input type='checkbox' name='option2' value='2' id='option2'><label for='option2'>Option 2</label><br>
+	      <input type='checkbox' name='option3' value='3' id='option3'><label for='option3'>Option 3</label><br>
+	      <input type='checkbox' name='option4' value='4' id='option4'><label for='option4'>Option 4</label><br>
+	      <input type='submit' value='Sent' name='sent'>
+	    </form>
+          </section>
+	  <h2 class='title' id='input_type_color' name='input_type_color'>&lt;input type='color'&gt;</h2>
+          <p class='content'>
+	    To be able to select a color, we must define <mark>&lt;input type='color'&gt;</mark> tag's attribute.
+          </p>
+	  <section class='code'>
+	    <h4>HTML Code</h4>
+            <code>
+	      &lt;form&gt;<br>
+	      &nbsp;&nbsp;&lt;input type='color' name='color' value='#ffffff'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;input type='submit' name='send' value='Send'&gt;<br>
+	      &lt;/form&gt;
+            </code>
+	    <h4>Result</h4>
+	    <form>
+	      <input type='color' name='color' value='#ffffff'><br>
+	      <input type='submit' name='send' value='Send'>
+	    </form> 
+          </section>
+	  <h2 class='title' id='input_type_image' name='input_type_image'>&lt;input type='image'&gt;</h2>
+          <p class='content'>
+	    To be able to send a image, we must define <mark>&lt;input type='image'&gt;</mark> tag's attribute.
+          </p>
+	  <section class='code'>
+	    <h4>HTML Code</h4>
+            <code>
+	      &lt;form&gt;<br>
+	      &nbsp;&nbsp;&lt;input type='image' name='image' src='/img/img.png'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;input type='submit' name='send' value='Sent'&gt;<br>
+	      &lt;/form&gt;
+            </code>
+	    <h4>Result</h4>
+	    <form>
+	      <input type='image' name='image' src='/img/img.png' style='width:100px;'><br>
+	      <input type='submit' name='send' value='Sent'>
+	    </form> 
+          </section>
+	  <h2 class='title' id='select_options' name='select_options'>&lt;Select&gt;&lt;options&gt;&lt;/options&gt;&lt;/select&gt;</h2>
+          <p class='content'>
+	    To create as many options as you want, you must define <mark>&lt;Select&gt;&lt;options&gt;&lt;/options&gt;&lt;/select&gt;</mark>
+	    tag's attribute.
+          </p>
+	  <section class='code'>
+	    <h4>HTML Code</h4>
+            <code>
+	      &lt;form&gt;<br>
+	      &nbsp;&nbsp;&lt;select name='city' id='city'&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;option value='recife'&gt;Recife&lt;/option&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;option value='olinda'&gt;Olinda&lt;/option&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;option value='gravata'&gt;Gravata&lt;/option&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;option value='caruaru' selected&gt;Caruaru&lt;/option&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;option value='toritama'&gt;Toritama&lt;/option&gt;<br>
+	      &nbsp;&nbsp;&lt;/select&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;input type='submit' name='send' value='Send'&gt;<br>
+	      &lt;/form&gt;
+            </code>
+	    <h4>Result</h4>
+	    <form>
+	      <select name='city' id='city'>
+		<option value='recife'>Recife</option>
+		<option value='olinda'>Olinda</option>
+		<option value='gravata'>Gravata</option>
+		<option value='caruaru' selected>Caruaru</option>
+		<option value='toritama'>Toritama</option>
+	      </select><br>
+	      <input type='submit' name='send' value='Send'>
+	    </form> 
+          </section>
+	  <h2 class='title' id='input_list_datalist' name='input_list_datalist'>&lt;input list='datalist_id'&lt;</h2>
+          <p class='content'>
+	    It was created to help us for searching and filling fields, however, it doesn't work alone,
+	    needing to declare <mark>&lt;datalist&gt;&lt;option&gt;&lt;/option&gt;&lt;/datalist&gt;</mark>
+          </p>
+	  <section class='code'>
+	    <h4>HTML Code</h4>
+            <code>
+	      &lt;form&gt;<br>
+	      &nbsp;&nbsp;&lt;input list='city' name='list'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;datalist id='city'&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option value='gravata'&gt;Gravata&lt;/option&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option value='caruaru'&gt;Caruaru&lt;/option&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option value='recife'&gt;Recife&lt;/option&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option value='toritama'&gt;Toritama&lt;/option&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;/datalist&gt;<br>
+	      &nbsp;&nbsp;&lt;input type='submit' name='send' value='Send'&gt;<br>
+	      &lt;/form&gt;
+            </code>
+	    <h4>Result</h4>
+	    <form method='get'>
+	      <input list='browsers' id='browsers' name='browsers'>
+	      <datalist id="browsers">
+		<option value="Google Chrome">
+		<option value="Mozilla Firefox">
+		<option value="Opera">
+		<option value="Safari">
+		<option value="Edge">
+	      </datalist>
+	      <input type="submit" value="Send" name="send">
+	    </form> 
+          </section>
+	  <h2 class='title' id='input_type_range' name='input_type_range'>&lt;input type='range'&gt;</h2>
+          <p class='content'>
+	    This input can check some level.
+          </p>
+	  <section class='code'>
+	    <h4>HTML Code</h4>
+            <code>
+	      &lt;form&gt;<br>
+	      &nbsp;&nbsp;&lt;input type='range' name='range' id='range' min='0' max='10'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;input type='submit' name='send' value='Send'&gt;<br>
+	      &lt;/form&gt;
+            </code>
+	    <h4>Result</h4>
+	    <form>
+	      <input type='range' name='range' id='range' min='0' max='10'><br>
+	      <input type='submit' name='send' value='Send'>
+	    </form> 
+          </section>
+	  <div class='important'>
+            <p>
+	      If we define attribute <mark>step</mark> to two, the range goes two from two.
+            </p>
+          </div>
+	  <section class='code'>
+	    <h4>HTML Code</h4>
+            <code>
+	      &lt;form&gt;<br>
+	      &nbsp;&nbsp;&lt;input type='range' name='range' id='range' min='0' max='10' step='2'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;input type='submit' name='send' value='Send'&gt;<br>
+	      &lt;/form&gt;
+            </code>
+	    <h4>Result</h4>
+	    <form>
+	      <input type='range' name='range' id='range' min='0' max='10' step='2'><br>
+	      <input type='submit' name='send' value='Send'>
+	    </form> 
+          </section>
+	  <h2 class='title' id='fieldset' name='fieldset'>&lt;fieldset&gt;</h2>
+          <p class='content'>
+	    This tag allows us to separate form into specific pieces. To create a fieldset
+	    you must define <mark>&lt;fieldset&gt;&lt;/fieldset&gt;</mark>
+          </p>
+	  <div class='important'>
+            <p>
+	      To define a fieldset title, you must define <mark>&lt;legend&gt;&lt;/legend&gt;</mark> tag.
+            </p>
+          </div>
+	  <section class='code'>
+	    <h4>HTML Code</h4>
+            <code>
+	      &lt;form&gt;<br>
+	      &nbsp;&nbsp;&lt;fieldset&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;legend&gt;User Data&lt;/legend&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;label for='name'&gt;Name: &lt;/label&gt;&lt;input type='text' name='name' id='name'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;label for='age'&gt;Age: &lt;/label&gt;&lt;input type='number' name='age' id='age' min='0' max='100' maxnlenght='3'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;label for='email'&gt;Email: &lt;/label&gt;&lt;input type='email' name='email' id='email'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;label for='birth'&gt;Birth Date: &lt;/label&gt;&lt;input type='date' name='birth' id='birth'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;/fieldset&gt;<br>
+	      &nbsp;&nbsp;&lt;fieldset&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;legend&gt;Gender&lt;/legend&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;input type='radio' name='gender' value='male' id='male'&gt;&lt;label for='male'&gt;Male&lt;/label&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;input type='radio' name='gender' value='female' id='female'&gt;&lt;label for='female'&gt;Female&lt;/label&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;input type='radio' name='gender' value='transgender' id='transgender'&gt;&lt;label for='transgender'&gt;Transgender&lt;/label&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;&lt;input type='radio' name='gender' value='non-binary' id='non-binary'&gt;&lt;label for='non-binary'&gt;Non Binary&lt;/label&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;/fieldset&gt;<br>
+	      &nbsp;&nbsp;&lt;input type='submit' name='send' value='Send'&gt;<br>
+	      &lt;/form&gt;
+            </code>
+	    <h4>Result</h4>
+	    <form>
+	      <fieldset>
+		<legend>User Data</legend><br>
+		<label for='name'>Name: </label><input type='text' name='name' id='name'><br>
+		<label for='age'>Age: </label><input type='number' name='age' id='age' min='0' max='100' maxnlenght='3'><br>
+		<label for='email'>Email: </label><input type='email' name='email' id='email'><br>
+		<label for='birth'>Birth Date: </label><input type='date' name='birth' id='birth'><br>
+	      </fieldset>
+	      <fieldset>
+		<legend>Gender</legend><br>
+		<input type='radio' name='gender' value='male' id='male'><label for='male'>Male</label><br>
+		<input type='radio' name='gender' value='female' id='female'><label for='female'>Female</label><br>
+		<input type='radio' name='gender' value='transgender' id='transgender'><label for='transgender'>Transgender</label><br>
+		<input type='radio' name='gender' value='non-binary' id='non-binary'><label for='non-binary'>Non Binary</label><br>
+	      </fieldset>
+	      <input type='submit' name='send' value='Send'>
+	    </form> 
+          </section>
+	  <h2 class='title' id='form_action' name='form_action'>&lt;form action='file.php'&gt;</h2>
+          <p class='content'>
+	    After creating a full HTML form, we must manipulate all data insert into it, and to do this,
+	    we must define <mark>action</mark> attribute, to set those data to be manipulated to PHP and inserted
+	    into MariaDB database.
+          </p>
+	  <h2 class='title' id='input_type_file' name='input_type_file'>&lt;input type='file'&gt;</h2>
+          <p class='content'>
+	    To create a input that receives a file, we need to declare <mark>&lt;input type='file'&gt;</mark> tag.
+          </p>
+	  <section class='code'>
+	    <h4>HTML Code</h4>
+            <code>
+	      &lt;form action='file.php' method='POST'&gt;<br>
+	      &nbsp;&nbsp;&lt;label for='file'&gt;File: &lt;/label&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;input type='file' name='file' id='file'&gt;&lt;br&gt;<br>
+	      &nbsp;&nbsp;&lt;input type='submit' name='send' value='Send'&gt;<br>
+	      &lt;/form&gt;
+            </code>
+	    <h4>Result</h4>
+	    <form action='file.php' method='POST'>
+	      <label for='file'>File: </label><br>
+	      <input type='file' name='file' id='file'><br>
+	      <input type='submit' name='send' value='Send'>
+	    </form> 
+          </section>
 	</section>
-	<section id='practice'>
-	  <h2 class='title' id='practice_1' name='practice_1'>First Practice</h2>
+	<section id='practice' style='background-color: white;'>
+	  <h2 class='title' id='practice' name='practice'>Practice</h2>
+	  <form method="POST" action="check.php" id='practice'>
+	    <h2 id="form" class='practice-form'>Main Data</h2>
+	    <figure id='content-image'>
+	      <img src='/img/user-icon.png' width='100%'>
+	      <input type='file' name='form-file'>
+	    </figure>
+	    <table id='table-1' class='table-form'>
+	      <tr>
+		<td>
+		  <label for='cpf'>CPF: </label>
+		  <input type='text' id='cpf' name='cpf' placeholder='XXX.XXX.XXX-XX'>
+		</td>
+		<td colspan='2'>
+		  <label for='input-name'>Name: </label>
+		  <input type='text' id='input-name' name='input_name'>
+		</td>
+	      </tr>
+	      <tr>
+		<td>
+		  <label for='birth-date'>Birth Date: </label>
+		  <input type='date' id='birth-date' name='birth-date'>
+		</td>
+		<td>
+		  <label for='form_gender'>Gender</label>
+		  <select id='form_gender' name='form_gender'>
+		    <option value='male' selected>Male</option>
+		    <option value='female'>Female</option>
+		    <option value='transgender'>Transgender</option>
+		    <option value='non-binary'>Non Binary</option>
+		  </select>
+		</td>
+		<td>
+		  <label for='civil-state'>Civil State: </label>
+		  <select id='civil-state' name='civil-state'>
+		    <option value='single' selected>Single</option>
+		    <option value='married'>Married</option>
+		    <option value='widow'>Widow</option>
+		    <option value='separated'>Separated</option>
+		  </select>
+		</td>
+	      </tr>
+	      <tr>
+		<td colspan='3'>
+		  <input type='checkbox' id='term'>
+		  <label for='term' id='term'>
+		    I wish to receive through e-mail info about new info compactible with my registered profile
+		  </label>
+		</td>
+	      </tr>
+	    </table>
+	    <h2 id='address' class='practice-form'>Address</h2>
+	    <table id='table-2' class='table-form'>
+	      <tr>
+		<td>
+		  <label for='form-cep'>CEP: </label>
+		  <input type='text' id='form-cep' name='form-cep'>
+		</td>
+		<td colspan='2'>
+		  <label for='form-address'>Address: </label>
+		  <input type='text' id='form-address' name='form-address'>
+		</td>
+		<td>
+		  <label for='form-number'>Number: </label>
+		  <input type='number' id='form-number' min='1' id='form-number'>
+		</td>
+	      </tr>
+	      <tr>
+		<td colspan='2'>
+		  <label for='form-neighborhood'>Neighborhood: </label>
+		  <input type='text' id='form-neighborhood' name='form-neighborhood'>
+		</td>
+		<td>
+		  <label for='form-city'>City: </label>
+		  <input type='text' id='form-city' name='form-city'>
+		</td>
+		<td>
+		  <label for='form-state'>State: </label>
+		  <select name='form-state' id='form-state'>
+		    <option>AC</option>
+		    <option>AL</option>
+		    <option>AP</option>
+		    <option>AM</option>
+		    <option>BA</option>
+		    <option>CE</option>
+		    <option>DF</option>
+		    <option>ES</option>
+		    <option>GO</option>
+		    <option>MA</option>
+		    <option>MT</option>
+		    <option>MS</option>
+		    <option>MG</option>
+		    <option>PA</option>
+		    <option>PB</option>
+		    <option>PR</option>
+		    <option>PE</option>
+		    <option>PI</option>
+		    <option>RJ</option>
+		    <option>RN</option>
+		    <option>RS</option>
+		    <option>RO</option>
+		    <option>RR</option>
+		    <option>SC</option>
+		    <option>SP</option>
+		    <option>SE</option>
+		    <option>TO</option>
+		  </select>
+		</td>
+	      </tr>
+	    </table>
+	    <input type='submit' name='send' value='Send' id='submit-practice'>
+	  </form>
 	</section>
       </article>
     </main>

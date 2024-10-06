@@ -120,16 +120,7 @@
     }
 
     div.important {
-	background-color: #006400;
-	padding: 25px;
-	border: 5px solid rgba(1,1,1,.8);
-	margin-top: 15px;
-	border-radius: 50px;
-    }
-
-    div.important p {
-	font-size: 14pt;
-	text-align: justify;
-	color: rgba(1,1,1,.9);
+	background-color: red;
+	padding: 5px;
     }
 }
