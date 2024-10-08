@@ -1,0 +1,130 @@
+@charset "utf-8";
+@keyframes mudarCor {
+    from {
+	width: 200px;
+    }
+    to {
+	width: 100%;
+    }
+}
+@keyframes example {
+  from {
+      width: 5%;
+  }
+  to {
+      width: 100%;
+  }
+}
+@-webkit-keyframes example-1 {
+  from {
+    width: 5%;
+  }
+  to {
+    width: 100%;
+  }
+}
+@-webkit-keyframes example-2 {
+  0% {
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    left: 100px;
+    top: 0px;
+  }
+  50% {
+    left: 100px;
+    top: 100px;
+  }
+  75% {
+    left: 0px;
+    top: 100px;
+  }
+  100% {
+    left: 0px;
+    top: 0px;
+  }
+}
+div#practice {
+    background-color: red;
+    height: 100px;
+    animation-name: mudarCor;
+    animation-duration: 3s;
+    animation-delay: 2s;
+}
+div#example-1 {
+  background-color: red;
+  height: 100px;
+  animation-name: example;
+  animation-duration: 3s;
+} 
+div#example-2 {
+  background-color: red;
+  height: 100px;
+  animation-name: example;
+  animation-duration: 3s;
+  animation-delay: 2s;
+  animation-iteration-count: 3;
+} 
+div#example-3 {
+  background-color: red;
+  height: 100px;
+  animation-name: example;
+  animation-duration: 3s;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+}
+div#example-4 {
+    background-color: red;
+    width: 5%;
+    height: 100px;
+    animation-name: example;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+} 
+div#example-5 {
+    background-color: red;
+  height: 100px;
+  width: 5%;
+  animation-name: example;
+  animation-duration: 3s;
+  animation-delay: 1s;
+  animation-fill-mode: backwards;
+} 
+div#example-6 {
+  background-color: red;
+  height: 100px;
+  width: 5%;
+  animation-name: example;
+  animation-duration: 3s;
+  animation-delay: 1s;
+  animation-fill-mode: initial;
+} 
+div#example-7 {
+  background-color: red;
+  width: 5%;
+  height: 100px;
+  animation-name: example;
+  animation-duration: 3s;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+} 
+div#example-8 {
+  background-color: red;
+  height: 100px;
+  -webkit-animation-name: example-1;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-delay: 1s;
+  -webkit-animation-iteration-count: infinite;
+}
+div#example-9 {
+  position: relative;
+  background-color: red;
+  height: 100px;
+  width: 100px;
+  -webkit-animation-name: example-2;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-delay: 1s;
+  -webkit-animation-iteration-count: infinite;
+} 
