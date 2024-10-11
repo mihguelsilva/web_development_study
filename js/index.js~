@@ -1,0 +1,40 @@
+document.addEventListener("DOMContentLoaded", function() {
+    // header#header
+    let header = document.querySelector("header#header");
+    header.setAttribute('style', 'box-shadow:1px 1px 10px white;');
+    let headerTitle = header.getAttribute("title").split(",");
+    let sectionTitle = document.createElement("section");
+    sectionTitle.setAttribute("id", "title");
+    sectionTitle.setAttribute("style", 'max-width:1000px;padding:100px;height:100%;box-sizing:border-box;background-color:rgba(1,1,1,.5);border-radius:20px;');
+    let h1Header = document.createElement("h1");
+    h1Header.setAttribute("style", "font-size:50pt;font-family:Arial;text-align:center;color:white;");
+    h1Header.append(headerTitle[0]);
+    let h2Header = document.createElement("h2");
+    h2Header.setAttribute("style", "color: white;text-align:center;margin-top: 30px;font-size:25pt;font-family:Roboto;");
+    h2Header.append(headerTitle[1]);
+    sectionTitle.append(h1Header);
+    sectionTitle.append(h2Header);
+    header.append(sectionTitle);
+
+    // section#my-commands
+    let main = document.querySelector("main");
+    let sectionCommands = document.createElement("section");
+    sectionCommands.setAttribute("id", "my-commands");
+    sectionCommands.setAttribute("class", "content");
+    let h2_mycommands = document.createElement("h2");
+    h2_mycommands.style.fontSize = "40pt";
+    h2_mycommands.style.fontFamily = "Roboto";
+    h2_mycommands.append("PHP Commands");
+    sectionCommands.append(h2_mycommands);
+    let h2_preg_match = document.createElement("h2");
+    h2_preg_match.setAttribute("class", "content");
+    h2_preg_match.append("preg_match()");
+    sectionCommands.append(h2_preg_match);
+    let h2_preg_replace = document.createElement("h2");
+    h2_preg_replace.setAttribute("class", "content");
+    h2_preg_replace.append("preg_replace()");
+    sectionCommands.append(h2_preg_replace);
+    main.append(sectionCommands);
+
+    // 
+});
