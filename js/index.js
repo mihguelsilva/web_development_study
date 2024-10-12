@@ -1,4 +1,6 @@
+let code;
 document.addEventListener("DOMContentLoaded", function() {
+    
     // header#header
     let header = document.querySelector("header#header");
     header.setAttribute('style', 'box-shadow:1px 1px 10px white;');
@@ -37,7 +39,19 @@ document.addEventListener("DOMContentLoaded", function() {
     sectionCommands.append(h2_preg_replace);
     main.append(sectionCommands);
     let sectionContent = document.querySelectorAll('section.content');
-    let pContent = document.querySelectorAll('p.content');
+    //icon
+    let sectionCode = document.querySelectorAll('section.code');
+    sectionCode.forEach(function(element, index) {
+	let img = document.createElement('img');
+	img.setAttribute('src', '/img/copy.png');
+	img.setAttribute('width', '100%');
+	img.setAttribute('alt', 'copy icon logo');
+	let figureImg = document.createElement('figure');
+	figureImg.setAttribute('class', 'copy');
+	figureImg.append(img);
+	element.insertBefore(figureImg, element.firstChild);
+    });
+    
     // media querys
     if (window.matchMedia("(min-width: 300px) and (max-width: 500px)").matches) {
 	// header
@@ -60,4 +74,20 @@ document.addEventListener("DOMContentLoaded", function() {
 	    element.setAttribute('style', 'font-size: 13pt;');
 	});
     };
+    
+
+    // functions
+    let figureCopy = document.querySelectorAll('figure.copy');
+    figureCopy.forEach(function(element, index) {
+	if (element) {
+	    element.addEventListener('click', function(e) {
+		code = e.target.parentElement.nextElementSibling.innerText;
+		document.execCommand('copy');
+	    });
+	};
+    });
+});
+document.addEventListener('copy', function(e) {
+    e.clipboardData.setData('text/plain', code);
+    e.preventDefault();
 });
