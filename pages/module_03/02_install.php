@@ -17,7 +17,7 @@
 	</header>
 	<main>
 	    <section class="content" id="class">
-		<h2 class="content">Install LAMP</h2>
+		<h2 class="content" id="install-lamp" name="Install lamp">Install LAMP</h2>
 		<p class="content">
 		    LAMP it's a service stack and an acronimous for:
 		</p>
