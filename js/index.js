@@ -72,21 +72,27 @@ document.addEventListener("DOMContentLoaded", function() {
     let tableDnm = document.querySelectorAll('table.table-dnm');
     tableDnm.forEach(function(element, index) {
 	if (element) {
+	    if (element.hasAttribute('title')) {
+		let caption = document.createElement('caption');
+		caption.setAttribute('style', 'font-size:20pt;font-family:"Black Han Sans", sans-serif;box-shadow:1px 1px 10px black;;');
+		caption.append(element.getAttribute('title'));
+		element.append(caption);
+	    }
 	    let tHead = document.createElement('thead');
 	    let tBody = document.createElement('tbody');
 	    let tableName = element.getAttribute('name');
 	    function tableContent (e, c, pE) {
-		for (let b = 0; b < c.split(',').length; b++) {
+		for (let b = 0; b < c.split('#').length; b++) {
 		    let tableElement = document.createElement(e);
-		    tableElement.setAttribute('style', 'border: 1px solid black;padding:10px;');
-		    tableElement.append(c.split(',')[b]);
+		    tableElement.setAttribute('style', 'border-right: 1px solid rgba(1,1,1,.3);padding:10px;');
+		    tableElement.append(c.split('#')[b]);
 		    pE.append(tableElement);
 		}
 	    };
 	    for (let a = 0; a < tableName.split('|').length; a++) {
 		let tr = document.createElement('tr');
 		if (a == 0) {
-		    tr.setAttribute('style', 'background-color: rgba(125,255,50,.3);border-bottom: 2px solid black;');
+		    tr.setAttribute('style', 'background-color: rgba(125,255,50,.3);');
 		    tableContent('th', tableName.split('|')[a], tr);
 		    tHead.append(tr);
 		} else {
@@ -99,10 +105,32 @@ document.addEventListener("DOMContentLoaded", function() {
 		    tBody.append(tr);
 		};
 	    };
-	    element.setAttribute('style', 'border-collapse:collapse;border:1px solid black;margin:20px auto;box-shadow: 1px 1px 10px black;font-family: Roboto;');
+	    element.setAttribute('style', 'border-collapse:collapse;border:1px solid black;margin:20px auto;box-shadow: 1px 1px 10px black;font-family: "Roboto", sans-serif;');
 	    element.append(tHead);
 	    element.append(tBody);
 	    element.removeAttribute('name');
+	};
+    });
+
+    // div.important
+    let divImportant = document.querySelectorAll('div.important');
+    divImportant.forEach(function(element, index) {
+	if (element) {
+	    let b = document.createElement('b');
+	    b.setAttribute('style', 'display:block;font-size: 20pt;font-family:"Black Han Sans", sans-serif;margin-bottom:10px;');
+	    b.append('Important');
+	    element.insertBefore(b, element.firstChild);
+	};
+    });
+
+    // div.danger
+    let divDanger = document.querySelectorAll('div.danger');
+    divDanger.forEach(function(element, index) {
+	if (element) {
+	    let b = document.createElement('b');
+	    b.setAttribute('style', 'display:block;font-size: 20pt;font-family:"Black Han Sans", sans-serif;margin-bottom:10px;');
+	    b.append('Careful');
+	    element.insertBefore(b, element.firstChild);
 	};
     });
     

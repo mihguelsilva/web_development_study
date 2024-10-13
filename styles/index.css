@@ -72,10 +72,10 @@ main section.code figure.copy:hover {
 }
 section.content h2.content {
     margin-top: 20px;
-    font-family: font-family: "Black Han Sans", sans-serif;
+    font-family: "Black Han Sans", sans-serif;
     font-size: 25pt;
 }
-section.content p {
+section.content p.content {
     margin-top: 20px;
     line-height: 30px;
     text-align: justify;
@@ -92,4 +92,23 @@ figure#php {
     float: left;
     padding: 50px;
     box-sizing: border-box;
+}
+div.important, div.danger {
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 20px;
+    border: 1px solid black;
+    box-shadow: 1px 1px 15px black;
+    color: rgba(255,255,255,.8);
+    text-align: justify;
+}
+div.important {
+    background-color: green;
+}
+div.danger {
+    background-color: #660000;
+}
+div.important p, div.danger p {
+    font-family: "Roboto", sans-serif;
+    font-size: 18pt;
 }
