@@ -1,19 +1,28 @@
 let code;
+
+// favicon
+let link = document.createElement('link');
+link.setAttribute('rel', 'icon');
+link.setAttribute('type', 'image/x-icon');
+link.setAttribute('href', '/img/gnu-icon.png');
+document.head.append(link);
+
 document.addEventListener("DOMContentLoaded", function() {
     
     // header#header
     let header = document.querySelector("header#header");
+    let headerTitle = header.getAttribute("name").split(",");
+    document.head.children[2].innerText = headerTitle[0];
     header.setAttribute('style', 'box-shadow:1px 1px 10px white;');
-    let headerTitle = header.getAttribute("title").split(",");
     let sectionTitle = document.createElement("section");
     sectionTitle.setAttribute("id", "title");
     sectionTitle.setAttribute("style",'max-width:1000px;padding:100px;height:100%;box-sizing:border-box;background-color:rgba(1,1,1,.5);border-radius:20px;');
     let h1Header = document.createElement("h1");
     h1Header.setAttribute("style", "font-size:50pt;font-family:Arial;text-align:center;color:white;");
-    h1Header.append(headerTitle[0]);
+    h1Header.append(headerTitle[1]);
     let h2Header = document.createElement("h2");
     h2Header.setAttribute("style", "color: white;text-align:center;margin-top: 30px;font-size:25pt;font-family:Roboto;");
-    h2Header.append(headerTitle[1]);
+    h2Header.append(headerTitle[2]);
     sectionTitle.append(h1Header);
     sectionTitle.append(h2Header);
     header.append(sectionTitle);
@@ -82,18 +91,6 @@ document.addEventListener("DOMContentLoaded", function() {
 	    element.setAttribute('style', 'width: 95%;box-shadow:1px 1px 10px black;');
 	});
     };
-    
-
-    // functions
-    let figureCopy = document.querySelectorAll('figure.copy');
-    figureCopy.forEach(function(element, index) {
-	if (element) {
-	    element.addEventListener('click', function(e) {
-		code = e.target.parentElement.nextElementSibling.innerText;
-		document.execCommand('copy');
-	    });
-	};
-    });
 
     // aside#summary
     let asideSummary = document.createElement('aside');
@@ -126,7 +123,7 @@ background-color:rgba(1,1,1,.5);position:relative;border-radius:50%;`);
 	let href = '#' + element.getAttribute('id');
 	a.setAttribute('class', 'summary');
 	a.setAttribute('href', href);
-	a.setAttribute('style', 'display:block;color:rgba(255,255,255,.8);padding:2px;text-decoration:none;');
+	a.setAttribute('style', 'display:block;color:rgba(255,255,255,.8);padding:2px;text-decoration:none;font-family:courier-new');
 	a.append(element.innerHTML);
 	sectionSummary.append(a);
     });
@@ -158,9 +155,26 @@ background-color:rgba(1,1,1,.5);position:relative;border-radius:50%;`);
 	    e.target.style.backgroundColor = 'rgba(0,0,0,.0)';
 	});
     });
+
+    // footer
+    let footer = document.createElement('footer');
+    document.body.append(footer);
+
+    // functions
+    let figureCopy = document.querySelectorAll('figure.copy');
+    figureCopy.forEach(function(element, index) {
+	if (element) {
+	    element.addEventListener('click', function(e) {
+		code = e.target.parentElement.nextElementSibling.innerText;
+		document.execCommand('copy');
+	    });
+	};
+    });
 });
 
+// copy code
 document.addEventListener('copy', function(e) {
     e.clipboardData.setData('text/plain', code);
     e.preventDefault();
 });
+
