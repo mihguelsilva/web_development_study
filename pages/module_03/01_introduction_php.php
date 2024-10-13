@@ -14,7 +14,7 @@
 	<script src="/js/index.js"></script>
     </head>
     <body>
-	<header name="Introduction, Introduction to PHP, A better view of PHP" id="header">
+	<header name="Introduction|Introduction to PHP|A better view of PHP" id="header">
 	</header>
 	<main>
 	    <section class="content" id="class">

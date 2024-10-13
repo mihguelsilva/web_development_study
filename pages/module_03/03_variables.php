@@ -14,9 +14,12 @@
 	<script src='/js/index.js'></script>
     </head>
     <body>
-	<header id="header" name="Variables, Variables, PHP variables and variable's scope"></header>
+	<header id="header" name="Variables|Variables|PHP variables, variable's types and operators"></header>
 	<main>
 	    <section class="content" id="class">
+		<h2 class="content" id="variable">Variable</h2>
+		<p class="content">
+		    Variables are little piece of memory of a computer.
 	    </section>
 	</main>
     </body>

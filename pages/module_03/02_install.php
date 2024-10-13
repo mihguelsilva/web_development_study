@@ -14,7 +14,7 @@
 	<script src='/js/index.js'></script>
     </head>
     <body>
-	<header name="Install, Installing Web Server, Install web server LAMP" id="header">
+	<header name="Install|Installing Web Server|Install web server LAMP" id="header">
 	</header>
 	<main>
 	    <section class="content" id="class">

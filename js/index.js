@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // header#header
     let header = document.querySelector("header#header");
-    let headerTitle = header.getAttribute("name").split(",");
+    let headerTitle = header.getAttribute("name").split("|");
     document.head.children[2].innerText = headerTitle[0];
     header.setAttribute('style', 'box-shadow:1px 1px 10px white;');
     let sectionTitle = document.createElement("section");
@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
     sectionTitle.append(h1Header);
     sectionTitle.append(h2Header);
     header.append(sectionTitle);
+    header.removeAttribute('name');
 
     // section#my-commands
     let main = document.querySelector("main");
@@ -37,16 +38,15 @@ document.addEventListener("DOMContentLoaded", function() {
     h2_mycommands.setAttribute('style', 'font-size:40pt;font-family:Roboto;');
     h2_mycommands.append("PHP Commands");
     sectionCommands.append(h2_mycommands);
-    let h2_preg_match = document.createElement("h2");
-    h2_preg_match.setAttribute("class", "content");
-    h2_preg_match.setAttribute('id', 'preg-match');
-    h2_preg_match.append("preg_match()");
-    sectionCommands.append(h2_preg_match);
-    let h2_preg_replace = document.createElement("h2");
-    h2_preg_replace.setAttribute("class", "content");
-    h2_preg_replace.setAttribute('id', 'preg-replace');
-    h2_preg_replace.append("preg_replace()");
-    sectionCommands.append(h2_preg_replace);
+    let h2PhpCommands = ['scandir()', 'preg_match()', 'preg_replace()'];
+    for (let i in h2PhpCommands) {
+	let h2Id = h2PhpCommands[i].replace('()', '').replace('_', '-');
+	let phpCommands = document.createElement('h2');
+	phpCommands.setAttribute('class', 'content');
+	phpCommands.setAttribute('id', h2Id);
+	phpCommands.append(h2PhpCommands[i]);
+	sectionCommands.append(phpCommands);
+    };
     main.append(sectionCommands);
     let sectionContent = document.querySelectorAll('section.content');
 
@@ -66,6 +66,44 @@ document.addEventListener("DOMContentLoaded", function() {
 	figureImg.setAttribute('class', 'copy');
 	figureImg.append(img);
 	element.insertBefore(figureImg, element.firstChild);
+    });
+
+    // table-dnm
+    let tableDnm = document.querySelectorAll('table.table-dnm');
+    tableDnm.forEach(function(element, index) {
+	if (element) {
+	    let tHead = document.createElement('thead');
+	    let tBody = document.createElement('tbody');
+	    let tableName = element.getAttribute('name');
+	    function tableContent (e, c, pE) {
+		for (let b = 0; b < c.split(',').length; b++) {
+		    let tableElement = document.createElement(e);
+		    tableElement.setAttribute('style', 'border: 1px solid black;padding:10px;');
+		    tableElement.append(c.split(',')[b]);
+		    pE.append(tableElement);
+		}
+	    };
+	    for (let a = 0; a < tableName.split('|').length; a++) {
+		let tr = document.createElement('tr');
+		if (a == 0) {
+		    tr.setAttribute('style', 'background-color: rgba(125,255,50,.3);border-bottom: 2px solid black;');
+		    tableContent('th', tableName.split('|')[a], tr);
+		    tHead.append(tr);
+		} else {
+		    if (a%2 == 0) {
+			tr.setAttribute('style', 'background-color: rgba(125,25,255,.4);');
+		    } else {
+			tr.setAttribute('style', 'background-color: rgba(125,125,50,.5);');
+		    };
+		    tableContent('td', tableName.split('|')[a], tr);
+		    tBody.append(tr);
+		};
+	    };
+	    element.setAttribute('style', 'border-collapse:collapse;border:1px solid black;margin:20px auto;box-shadow: 1px 1px 10px black;font-family: Roboto;');
+	    element.append(tHead);
+	    element.append(tBody);
+	    element.removeAttribute('name');
+	};
     });
     
     // media querys
