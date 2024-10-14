@@ -46,10 +46,10 @@ section.content p.content {
     line-height: 30px;
     text-align: justify;
 }
-main section.content ul {
+main section.content ul, main section.content ol {
     margin-top: 20px;
 }
-main section.content ul, section.content p {
+main section.content ul, section.content p, main section.content ol {
     font-family: Poppins;
 }
 main section.content h3.title-sub {
