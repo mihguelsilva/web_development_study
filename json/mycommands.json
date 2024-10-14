@@ -1,0 +1,17 @@
+{
+    "var_dump": {
+	"p": {
+	    "class": "content",
+	    "elements": 2,
+	    "content": []
+	},
+	"section": {
+	    "class": "code",
+	    "sub": {
+		"code": {
+		    "content": ""
+		}
+	    }
+	}
+    }
+}

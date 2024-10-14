@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
     h2_mycommands.setAttribute('style', 'font-size:40pt;font-family:Roboto;');
     h2_mycommands.append("PHP Commands");
     sectionCommands.append(h2_mycommands);
-    let h2PhpCommands = ['scandir()', 'preg_match()', 'preg_replace()'];
+    let h2PhpCommands = ['scandir()', 'count()', 'preg_match()', 'preg_replace()'];
     for (let i in h2PhpCommands) {
 	let h2Id = h2PhpCommands[i].replace('()', '').replace('_', '-');
 	let phpCommands = document.createElement('h2');
@@ -109,6 +109,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	    element.append(tHead);
 	    element.append(tBody);
 	    element.removeAttribute('name');
+	    element.removeAttribute('title');
 	};
     });
 
@@ -164,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function() {
     asideSummary.setAttribute('style', 'position:fixed;max-height:500px;max-width:40%;top:30px;padding:10px;');
     let sectionSummary = document.createElement('section');
     sectionSummary.setAttribute('id', 'summary');
-    sectionSummary.setAttribute('style', 'box-sizing:border-box;margin-top:15px;padding:15px;display:none;box-shadow:1px 1px 10px white;border-radius:30px;background-color:rgba(1,1,1,.9);color:rgba(255,255,255,.8);');
+    sectionSummary.setAttribute('style', 'box-sizing:border-box;margin-top:15px;padding:15px;display:none;box-shadow:1px 1px 10px white;border-radius:30px;background-color:rgba(1,1,1,.9);color:rgba(255,255,255,.8);overflow:auto;height:450px;');
     let figureMenu = document.createElement('figure');
     figureMenu.setAttribute('id', 'menu-icon');
     figureMenu.setAttribute('style', 'width:50px;position:absolute;transform:translate(-50%,-50%);left:50%;height:100%;border-radius:50%;');
