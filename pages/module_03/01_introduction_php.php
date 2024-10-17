@@ -13,9 +13,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="/js/index.js"></script>
     </head>
-    <body>
-	<header name="Introduction|Introduction to PHP|A better view of PHP" id="header">
-	</header>
+    <body name="Introduction|Introduction to PHP|A better view of PHP">
 	<main>
 	    <section class="content" id="class">
 		<figure id="php">

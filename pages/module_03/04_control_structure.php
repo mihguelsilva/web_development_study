@@ -10,11 +10,11 @@
 	<link href='https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap' rel='stylesheet'>
 	<link href='https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap' rel='stylesheet'>
 	<link href='https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap' rel='stylesheet'>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
 	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
 	<script src='/js/index.js'></script>
     </head>
-    <body>
-	<header id="header" name="Structure Control|Structure Control|PHP Structure Control (if/else) (swich/case)"></header>
+    <body name="Structure Control|Structure Control|PHP Structure Control (if/else) (swich/case)">
 	<main>
 	    <section id="class" class="content">
 		<h2 class="content" id="if/else">If/Else</h2>
@@ -332,6 +332,80 @@
 		    This is only an introduction to forms manipulation. We'll going to check this out
 		    with much more focus ahead.
 		</p>
+		<h3 class='title-sub'>HTML Code</h3>
+		<section class='code'>
+		    <code>
+&lt;!DOCTYPE html&gt;<br/>
+&lt;html&gt;<br/>
+&lt;head&gt;<br/>
+&lt;meta charset="utf-8"&gt;<br/>
+&lt;/head&gt;<br/>
+&lt;body&gt;<br/>
+&lt;form method='POST' action='/pages/intro_form.php'&gt;<br/>
+Name: &lt;input type='text' name='name'&gt;&lt;br&gt;<br/>
+Age: &lt;input type='number' name='age'&gt;&lt;br&gt;<br/>
+Genre: &lt;select name='genre'&gt;<br/>
+&lt;option value='man_cisgender'&gt;Man Cisgender&lt;/option&gt;<br/>
+&lt;option value='woman_cisgender'&gt;Woman Cisgender&lt;/option&gt;<br/>
+&lt;option value='man_transgender'&gt;Man Transgender&lt;/option&gt;<br/>
+&lt;option value='woman_transgender'&gt;Woman Transgender&lt;/option&gt;<br/>
+&lt;option value='non_binary'&gt;Non Binary&lt;/option&gt;<br/>
+&lt;/select&gt;<br/>
+&lt;/form&gt;<br/>
+&lt;/body&gt;<br/>
+&lt;/html&gt;
+		    </code>
+		</section>
+		<form method="POST" action="/pages/intro_form.php">
+		    <table class="intro-form">
+			<tr>
+			    <td>
+				<label for="name" >Name</label>
+				<input type="text" id="name" name="name"/>
+			    </td>
+			</tr>
+			<tr>
+			    <td>
+				<label for="age">Age</label>
+				<input type="number" id="age" name="age" min="0" max="100" maxlength="3"/>
+			    </td>
+			</tr>
+			<tr>
+			    <td>
+				<label for="genre">Genre</label>
+				<select id="genre" name="genre">
+				    <option value="man_cisgender">Man Cisgender</option>
+				    <option value="woman_cisgender">Woman Cisgender</option>
+				    <option value="man_transgender">Man Transgender</option>
+				    <option value="woman_transgender">Woman Transgender</option>
+				    <option value="non_binary">Non Binary</option>
+				</select>
+			    </td>
+			</tr>
+			<tr>
+			    <td>
+				<input type='submit' name='submit' value='Send'/>
+			    </td>
+			</tr>
+		    </table>
+		</form>
+		<p class='content'>
+		</p>
+		<h3 class='title-sub'>PHP Code</h3>
+		<section class='code'>
+		    <code>
+			<span class='php-base'>&lt;?php</span><br>
+			<span class='php-dollar'>$</span><span class='php-var'>namePerson</span> = <span class='php-arguments'>$_POST['name']</span>;<br/>
+			<span class='php-dollar'>$</span><span class='php-var'>agePerson</span> = <span class='php-arguments'>$_POST['age']</span>;<br/>
+			<span class='php-dollar'>$</span><span class='php-var'>genrePerson</span> = <span class='php-arguments'>$_POST['genre']</span>;<br/>
+			<span class='php-echo'>echo</span> <span class='php-string'>"The name is $namePerson"</span>;<br>
+			<span class='php-echo'>echo</span> <span class='php-string'>"&lt;br&gt;"</span>;<br>
+			<span class='php-echo'>echo</span> <span class='php-string'>"The age is $nameAge"</span>;<br>
+			<span class='php-echo'>echo</span> <span class='php-string'>"&lt;br&gt;"</span>;<br>
+			<span class='php-echo'>echo</span> <span class='php-string'>"The genre is $genrePerson"</span>;<br>
+			<span class='php-base'>?&gt;</span>
+		    </code>
+		</section>
 	    </section>
 	</main>
     </body>

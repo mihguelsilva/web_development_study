@@ -8,25 +8,25 @@ link.setAttribute('href', '/img/gnu-icon.png');
 document.head.append(link);
 
 document.addEventListener("DOMContentLoaded", function() {
-    
-    // header#header
-    let header = document.querySelector("header#header");
-    let headerTitle = header.getAttribute("name").split("|");
-    document.head.children[2].innerText = headerTitle[0];
+    let bodyTitle = document.body.getAttribute("name").split("|");
+    let header = document.createElement("header");
+    header.setAttribute("id", "header");
+    document.head.children[2].innerText = bodyTitle[0];
     header.setAttribute('style', 'box-shadow:1px 1px 10px white;');
     let sectionTitle = document.createElement("section");
     sectionTitle.setAttribute("id", "title");
     sectionTitle.setAttribute("style",'max-width:1000px;padding:100px;height:100%;box-sizing:border-box;background-color:rgba(1,1,1,.5);border-radius:20px;');
     let h1Header = document.createElement("h1");
     h1Header.setAttribute("style", "font-size:50pt;font-family:Arial;text-align:center;color:white;");
-    h1Header.append(headerTitle[1]);
+    h1Header.append(bodyTitle[1]);
     let h2Header = document.createElement("h2");
     h2Header.setAttribute("style", "color: white;text-align:center;margin-top: 30px;font-size:25pt;font-family:Roboto;");
-    h2Header.append(headerTitle[2]);
+    h2Header.append(bodyTitle[2]);
     sectionTitle.append(h1Header);
     sectionTitle.append(h2Header);
     header.append(sectionTitle);
-    header.removeAttribute('name');
+    document.body.insertBefore(header, document.body.firstElementChild);
+    document.body.removeAttribute("name");
 
     // section#my-commands
     let main = document.querySelector("main");
@@ -236,6 +236,37 @@ background-color:rgba(1,1,1,.5);position:relative;border-radius:50%;`);
 		document.execCommand('copy');
 	    });
 	};
+    });
+
+    let liMenu = document.querySelectorAll("header#menu section#menu nav ul li.level-one");
+    let subLiMenu = document.querySelectorAll("header#menu section#menu nav ul li nav ul li");
+    liMenu.forEach(function(element, index) {
+	element.addEventListener("click", function(e) {
+	    if (e.target.firstElementChild.style.display == "none") {
+		e.target.firstElementChild.style.display = "block";
+	    } else {
+		e.target.firstElementChild.style.display = "none";
+	    };
+	});
+    });
+    
+    subLiMenu.forEach(function(element, index) {
+	element.setAttribute('style', 'float:none;font-size:12pt;background-color:rgba(1,1,1,.9);width:20%;');
+	let twoLevel = new RegExp(/^(\d+)\_([a-zA-Z0-9]{1,})$/);
+	if (twoLevel.test(element.firstElementChild.innerText)) {
+	    let title = element.firstElementChild.innerText.replace(new RegExp(/(\d+)_(\w+)/), "$2");
+	    element.firstElementChild.innerText = title[0].toUpperCase() + title.slice(1);
+	} else {
+	    let title = element.firstElementChild.innerText.replace(new RegExp(/(\d+)_(\w+)_(\w+)/), "$2 $3");
+	    element.firstElementChild.innerText = title[0].toUpperCase() + title.slice(1);
+	}
+
+	element.addEventListener("mouseover", function(e) {
+	    e.target.style.backgroundColor = "rgba(1,1,1,.8)";
+	});
+	element.addEventListener("mouseout", function(e) {
+	    e.target.style.backgroundColor = "rgba(1,1,1,.0)";
+	});
     });
 });
 

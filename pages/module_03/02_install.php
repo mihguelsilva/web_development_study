@@ -13,9 +13,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src='/js/index.js'></script>
     </head>
-    <body>
-	<header name="Install|Installing Web Server|Install web server LAMP" id="header">
-	</header>
+    <body name="Install|Installing Web Server|Install web server LAMP">
 	<main>
 	    <section class="content" id="class">
 		<h2 class="content" id="install-lamp" name="Install lamp">Install LAMP</h2>

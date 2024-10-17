@@ -13,8 +13,7 @@
 	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
 	<script src='/js/index.js'></script>
     </head>
-    <body>
-	<header id="header" name="Variables|Variables|PHP variables, variable's types and operators"></header>
+    <body name="Variables|Variables|PHP variables, variable's types and operators">
 	<main>
 	    <section class="content" id="class">
 		<h2 class="content" id="variable">Variable</h2>
