@@ -39,5 +39,35 @@ if ($submit == 'Send') {
 	    echo "<p>Error! /24 don't support /${sum}</p>";
 	    break;
     };
+} else if ($submit == 'While') {
+    $counter = $_POST['counter'];
+    $limitValue = $_POST['limit_value'];
+    $increment = $_POST['increment'];
+    $option = $_POST['option'];
+    if ($option == 'increment') {
+        if ($counter >= $limitValue) {
+            echo "<script>
+window.alert('The counter value must be less than limitValue value!');
+window.location.href = '/pages/module_03/05_repetition_structure.php';
+</script>";
+            exit();
+        }
+        while($counter <= $limitValue) {
+            echo "<pre>counter match <b>$counter</b></pre>";
+            $counter = $counter + $increment;
+        };
+    } else {
+        if ($counter <= $limitValue) {
+            echo "<script>
+window.alert('The counter value must be greater than limitValue value!');
+window.location.href = '/pages/module_03/05_repetition_structure.php';
+</script>";
+            exit();
+        }
+        while($counter >= $limitValue) {
+            echo "<pre>counter match <b>$counter</b></pre>";
+            $counter = $counter -$increment;
+        };
+    };
 };
 ?>

@@ -268,6 +268,23 @@ background-color:rgba(1,1,1,.5);position:relative;border-radius:50%;`);
 	    e.target.style.backgroundColor = "rgba(1,1,1,.0)";
 	});
     });
+
+    let buttonShow = document.querySelectorAll('button.show');
+    buttonShow.forEach(function(element, index){
+	element.addEventListener('click', function(e) {
+	    let divShowClass = e.target.nextElementSibling.getAttribute('class');
+	    let divShow = e.target.nextElementSibling;
+	    if (divShowClass == 'hide') {
+		divShow.removeAttribute('class');
+		divShow.setAttribute('class', 'show');
+		console.log(divShowClass);
+	    } else if (divShowClass == 'show') {
+		divShow.removeAttribute('class');
+		divShow.setAttribute('class', 'hide');
+		console.log(divShowClass);
+	    };
+	});
+    });
 });
 
 // copy code
