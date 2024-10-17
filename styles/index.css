@@ -76,10 +76,15 @@ main section.content h2.content {
     font-family: "Black Han Sans", sans-serif;
     font-size: 25pt;
 }
-section.content p.content {
+main section.content p.content {
     margin-top: 20px;
     line-height: 30px;
     text-align: justify;
+}
+main section.content mark {
+    padding: 0px 10px;
+    border-radius: 50px;
+    box-shadow: 1px 1px 10px rgba(255,255,255,.8);
 }
 main section.content ul, main section.content ol {
     margin-top: 20px;
@@ -161,6 +166,7 @@ div.danger {
 div.important p, div.danger p {
     font-family: "Roboto", sans-serif;
     font-size: 18pt;
+    line-height: 35px;
 }
 span.php-base {
     color: darkgreen;

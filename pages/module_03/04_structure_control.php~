@@ -406,6 +406,17 @@ Genre: &lt;select name='genre'&gt;<br/>
 			<span class='php-base'>?&gt;</span>
 		    </code>
 		</section>
+		<div class='important'>
+		    <p>
+			As shown before, to manipulate an POST form, we must use <mark>$_POST</mark> global array,
+			inserting in it name's element attribute where user must input it's data, to send it.
+		    </p>
+		    <br>
+		    <p>
+			If form uses GET method, then we must use <mark>$_GET</mark> global array to receive those
+			datas, inserting in it name's element attribute.
+		    </p>
+		</div>
 	    </section>
 	</main>
     </body>
