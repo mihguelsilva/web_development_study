@@ -16,7 +16,7 @@
     </head>
     <body name='Exercises|Exercises|Practicing PHP'>
         <main>
-            <section class='content' id='class'>
+            <section class='content' id='class' style="position:relative;">
 		<h2 class='content' id='looping-1'>Looping 1</h2>
 		<p class='content'>
 		    Create an algorithm that return's every number from 0 to 200 divisible per 3.
@@ -25,11 +25,12 @@
 		<section class='code'>
 		    <code>
 			<span class='php-base'>&lt;?php</span><br>
-			<span class='php-dollar'>$</span><span class='php-var'>counter</span> = <span class='php-arguments'>0</span>;<br/>
+			<span class='php-dollar'>$</span><span class='php-var'>module</span> = <span class='php-arguments'>3</span>;<br/>
+			<span class='php-dollar'>$</span><span class='php-var'>counter</span> = <span class='php-arguments'>$module</span>;<br/>
 			<span class='php-methods'>while</span>(<span class='php-arguments'>$counter <= 200</span>) {<br/>
-&nbsp;&nbsp;<span class='php-dollar'>$</span><span class='php-var'>verify</span> = <span class='php-arguments'>$counter % 3</span>;<br/>
+&nbsp;&nbsp;<span class='php-dollar'>$</span><span class='php-var'>verify</span> = <span class='php-arguments'>$counter % $module</span>;<br/>
 &nbsp;&nbsp;<span class='php-methods'>if</span> (<span class='php-arguments'>$verify == 0</span>) {<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class='php-echo'>echo</span> <span class='php-string'>"&lt;pre&gt;$counter it's divisible per &lt;b&gt;3&lt;/b&gt;&lt;/pre&gt;&lt;br&gt;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='php-echo'>echo</span> <span class='php-string'>"&lt;pre&gt;$counter it's divisible per &lt;b&gt;$module&lt;/b&gt;&lt;/pre&gt;&lt;br&gt;"</span>;<br>
 &nbsp;&nbsp;}<br/>
 }<br/>
 			<span class='php-base'>?&gt;</span>
@@ -41,14 +42,39 @@
 		    <section class='result'>
 			<?php
 			// looping
-			$counter = 0;
+			$module = 3;
+			$counter = $module;
 			while ($counter <= 200) {
-			    $verify = $counter % 3;
+			    $verify = $counter % $module;
 			    if ($verify == 0) {
-				echo "<pre>$counter it's divisible per <b>3</b></pre><br>";
+				echo "<pre>$counter it's divisible per <b>$module</b></pre><br>";
 			    };
 			    $counter++;
-			}
+			};
+			?>
+		    </section>
+		</div>
+		<h2 class="content" id="looping-2">Looping 2</h2>
+		<p class='content'>
+		    Write multiplication table between 1 and 10.
+		</p>
+		<h3 class='title-sub'>Result</h3>
+		<button class="show">Show Result</button>
+		<div class="hide" style="height:1100px;">
+		    <section class='result' style='position: absolute;transform:translate(-50%,0%);left:50%;width:90%;'>
+			<?php
+			$base = 1;
+			while($base <= 10) {
+			    $mult = 1;
+			    echo "<div style='padding:4%;border-radius:50px;float:left;'>";
+			    while($mult <= 10) {
+				$operation = $base * $mult;
+				echo "$base x $mult = $operation <br>";
+				$mult++;
+			    };
+			    echo "</div>";
+			    $base++;
+			};
 			?>
 		    </section>
 		</div>

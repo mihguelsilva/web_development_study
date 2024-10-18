@@ -44,7 +44,7 @@
 		    <?php
 		    $counter = 1;
 		    while ($counter <= 10) {
-			echo "<pre>Counter match <b>$counter</b> </pre><br>";
+			echo "<pre>Counter match <b>$counter</b> </pre>";
 			$counter++;
 		    };
 		    ?>
@@ -222,16 +222,89 @@
 		    <?php
 		    $counter = 20;
 		    do {
-			echo "Counter match in <b>Do/While $counter</b></pre><br>";
+			echo "Counter match in <b>Do/While $counter</b></pre>";
 			$counter++;
 		    } while($counter <= 10);
 		    while ($counter <= 10) {
-			echo "<pre>Counter match in <b>While $counter</b></pre><br>";
+			echo "<pre>Counter match in <b>While $counter</b></pre>";
 			$counter++;
 		    };
 		    ?>
 		</section>
-		<h2 class="content" id="exercises">Exercises</h2>
+		<h2 class="content" id="For">For</h2>
+		<div class='important'>
+		    <p>
+			<mark>For</mark> it's much more used than <mark>While</mark> and <mark>Do/While</mark> together.
+		    </p>
+		</div>
+		<p class='content'>
+		    <mark>For</mark> got three parameters:
+		</p>
+		<ol class="content">
+		    <li>Counter</li>
+		    <li>Operation</li>
+		    <li>Increment</li>
+		</ol>
+		<h3 class="title-sub">PHP Code</h3>
+		<section class='code'>
+		    <code>
+			<span class='php-base'>&lt;?php</span><br>
+			<span class='php-methods'>for</span>(<span class='php-dollar'>$</span><span class='php-var'>counter</span> = 0; <span class='php-arguments'>$counter &lt; 10</span>; <span class='php-arguments'>$counter++</span>) {<br/>
+&nbsp;&nbsp;<span class='php-echo'>echo</span> <span class='php-arguments'>$counter</span>;<br/>
+}<br/>
+			<span class='php-base'>?&gt;</span>
+		    </code>
+		</section>
+		<h3 class='title-sub'>Result</h3>
+		<section class='result'>
+		    <?php
+		    for ($counter = 0; $counter < 10; $counter++) {
+			echo "<pre>Counter match <b>$counter</b></pre>";
+		    }
+		    ?>
+		</section>
+		<p class='content'>
+		    Let's check a real <mark>For</mark> example in an site.
+		</p>
+		<h3 class='title-sub'>Result</h3>
+		<section class='result'>
+		    <?php
+		    echo "<table class='intro-form'>";
+		    // day birth
+		    echo "<tr><td>";
+		    echo "<label for='day'>Birth Day</label>";
+		    echo "<select name='day' id='day'>";
+		    for ($day = 1; $day <= 31; $day++) {
+			echo "<option value='$day'>$day</option>";
+		    }
+		    echo "</select>";
+		    echo "</tr></td>";
+		    // month birth
+		    $monthArray = array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+		    echo "<tr><td>";
+		    echo "<label for='month'>Month Birth</label>";
+		    echo "<select id='month' name='month'>";
+		    for ($a = 0; $a < count($monthArray); $a++) {
+			echo "<option value='$monthArray[$a]'>$monthArray[$a]</option>";
+		    }
+		    echo "</select>";
+		    echo "</td></tr>";
+		    // year birth
+		    echo "<tr><td>";
+		    echo "<label for='year'>Birth Year</label>";
+		    echo "<select name='year' id='year'>";
+		    for ($year = date("Y"); $year >= 1900; $year--) {
+
+			echo "<option value='$year'>$year</option>";
+		    }
+		    echo "</select>";
+		    echo "</td></tr>";
+		    echo "<tr><td>";
+		    echo "<input type='submit' name='action' value='Person'>";
+		    echo "</td></tr>";
+		    echo "</table>";
+		    ?>
+		</section>
             </section>
         </main>
     </body>
