@@ -215,7 +215,16 @@ span.php-arguments {
     color: purple;
 }
 span.php-comments {
-    collor: #17B169;
+    color: #17B169;
+}
+span.php-function {
+    color: darkred;
+}
+span.php-function-id {
+    color: blueviolet;
+}
+span.php-function-parameters {
+    color: cadetblue;
 }
 table.intro-form {
     margin: 20px auto;
