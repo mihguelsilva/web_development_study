@@ -23,6 +23,13 @@
 		    independently if it's same or different data type
 		    value.
 		</p>
+		<div class='danger'>
+		    <p>
+			If we try to see array's contents with <mark>echo</mark> command without
+			manipulation, it will return an error, once <mark>echo</mark> just print's
+			strings.
+		    </p>
+		</div>
 		<section class='code'>
 		    <code>
 			<span class='php-base'>&lt;?php</span><br>
@@ -138,7 +145,7 @@
 		<div class='important'>
 		    <p>
 			Using <mark>for</mark>, we must define initial and final value to pass
-			through all array's indexes. 
+			through all array's indexes.
 		    </p>
 		    <br/>
 		    <p>
@@ -146,6 +153,45 @@
 			value, as shown in previous example.
 		    </p>
 		</div>
+		<h2 class='content' id='print_r'>print_r()</h2>
+		<p class='content'>
+		    Prints all content's inside an array.
+		</p>
+		<h3 class='title-sub'>PHP Code</h3>
+		<section class='code'>
+		    <code>
+			<span class='php-base'>&lt;?php</span><br>
+			<span class='php-dollar'>$</span><span class='php-var'>numbers</span> = <span class='php-function'>array</span>(<span class='php-arguments'>1,2,3,4,5,6,7,8,9,10</span>);<br>
+			<span class='php-echo'>echo</span> <span class='php-string'>"&lt;pre&gt;"</span>;<br/>
+			<span class='php-function'>print_r</span>(<span class='php-dollar'>$</span><span class='php-var'>numbers</span>);<br>
+			<span class='php-echo'>echo</span> <span class='php-string'>"&lt;/pre&gt;"</span>;<br/>
+			<span class='php-echo'>echo</span> <span class='php-string'>"&lt;br&gt;"</span>;<br/>
+			<span class='php-echo'>echo</span> <span class='php-string'>"&lt;pre&gt;"</span>;<br/>
+			<span class='php-function'>var_dump</span>(<span class='php-dollar'>$</span><span class='php-var'>numbers</span>);<br>
+			<span class='php-echo'>echo</span> <span class='php-string'>"&lt;/pre&gt;"</span>;<br/>
+			<span class='php-base'>?&gt;</span>
+		    </code>
+		</section>
+		<h3 class='title-sub'>Result</h3>
+		<section class='result'>
+		    <?php
+		    $numbers = array(1,2,3,4,5,6,7,8,9,10);
+		    echo "<pre>";
+		    print_r($numbers);
+		    echo "</pre>";
+		    print("<br/>");
+		    print("<pre>");
+		    var_dump($numbers);
+		    print("</pre>");
+		    ?>
+		</section>
+		<div class='important'>
+		    <p>
+			<mark>print_r</mark> must be used only in development process. It's not
+			used in production environment.
+		    </p>
+		</div>
+		<h2 class='content' id='add-elements-in-array'>Add Elements in Array</h2>
             </section>
         </main>
     </body>
