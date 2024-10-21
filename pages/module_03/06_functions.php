@@ -226,7 +226,7 @@
 		</section>
 		<h2 class='content' id='fun_get_args'>func_get_args()</h2>
 		<p class='content'>
-		    We can create an function with define parameters in it, however,
+		    We can create an function without define parameters in it, however,
 		    during the call, we can set parameters and get all of them using
 		    <mark>func_get_args</mark>, that will return, in an array, all
 		    parameters inserted.
@@ -249,6 +249,120 @@
 			var_dump(func_get_args());
 		    }
 		    echo variousArgs("Mihguel", 25, "Amara");
+		    ?>
+		</section>
+		<h2 class='content' id='variable-scope'>Variable Scope</h2>
+		<p class='content'>
+		    <mark>Variable scope</mark> it's how and where <mark>variables</mark>
+		    are seemed inside PHP's code.
+		</p>
+		<section class='code'>
+		    <code>
+			<span class='php-base'>&lt;?php</span><br>
+			<span class='php-dollar'>$</span><span class='php-var'>name</span> = <span class='php-string'>"Hello World"</span>;<br>
+			<span class='php-echo'>echo</span> <span class='php-dollar'>$</span><span class='php-var'>name</span>; &nbsp;&nbsp;<span class='php-comments'>// Return Hello World</span><br/>
+			<span class='php-function'>function</span> <span class='php-function-id'>greeting</span>(<span class='php-function-parameters'></span>) { <br>
+&nbsp;&nbsp;<span class='php-echo'>echo</span> <span class='php-dollar'>$</span><span class='php-var'>name</span>; &nbsp;&nbsp;<span class='php-comments'>// Error, because it's calling an global scope's variable</span><br/>
+}<br>
+			<span class='php-function'>greeting</span>();<br>
+			<span class='php-base'>?&gt;</span>
+		    </code>
+		</section>
+		<div class='danger'>
+		    <p>
+			Besides, in the previous example, both variable has the same name,
+			outside function, the same variable has an <mark>global</mark> scope
+			and inside function has an <mark>local</mark> scope.
+		    </p>
+		    <br/>
+		    <p>
+			The same error will occur if an variable it's declared inside the
+			bounds of a function and called outside it's code block.
+		    </p>
+		</div>
+		<section class='code'>
+		    <code>
+			<span class='php-base'>&lt;?php</span><br>
+			<span class='php-dollar'>$</span><span class='php-var'>name</span> = <span class='php-string'>"Mihguel"</span>;<br>
+			<span class='php-function'>function</span> <span class='php-function-id'>greeting</span>(<span class='php-function-parameters'></span>) { <br>
+&nbsp;&nbsp;<span class='php-arguments'>global</span> <span class='php-dollar'>$</span><span class='php-var'>name</span>;<br/>
+&nbsp;&nbsp;<span class='php-echo'>echo</span> <span class='php-dollar'>$</span><span class='php-var'>name</span>; <br/>
+}<br>
+			<span class='php-function'>greeting</span>();<br>
+			<span class='php-base'>?&gt;</span>
+		    </code>
+		</section>
+		<div class='important'>
+		    <p>
+			The <mark>global</mark> attribute allows us to pick an global's scope
+			variable and use it inside a bounds code block function without
+			return an error.
+		    </p>
+		</div>
+		<h2 class='content' id='reference-and-value-parameter'>Reference and Value Parameters</h2>
+		<p class='content'>
+		    When we pass a variable the contains a value that goes into parameter's
+		    function to return it's result, the content's variable it's not affected,
+		    because we're calling a function as value parameter.
+		</p>
+		<h3 class='title-sub'>PHP Code</h3>
+		<section class='code'>
+		    <code>
+			<span class='php-base'>&lt;?php</span><br>
+			<span class='php-function'>function</span> <span class='php-function-id'>appendN</span>(<span class='php-function-parameters'>$value</span>) { <br>
+&nbsp;&nbsp;<span class='php-dollar'>$</span><span class='php-var'>value</span>++;<br/>
+&nbsp;&nbsp;<span class='php-echo'>echo</span> <span class='php-dollar'>$</span><span class='php-var'>value</span>;<br/>
+}<br>
+			<span class='php-dollar'>$</span><span class='php-var'>n1</span> = <span class='php-arguments'>10</span>;<br/>
+			<span class='php-function'>appendN</span>(<span class='php-dollar'>$</span><span class='php-var'>n1</span>);<br>
+			<span class='php-echo'>echo</span> <span class='php-dollar'>$</span><span class='php-var'>n1</span>;<br/>
+			<span class='php-base'>?&gt;</span>
+		    </code>
+		</section>
+		<h3 class='title-sub'>Result</h3>
+		<section class='result'>
+		    <?php
+		    function appendN($value) {
+			$value++;
+			echo $value;
+		    }
+		    $n1 = 10;
+		    appendN($n1);
+		    echo "<br>";
+		    echo $n1;
+		    ?>
+		</section>
+		<div class='important'>
+		    <p>
+			However, if we pass the variable as reference parameter, let's check
+			it's behaviour.
+		    </p>
+		</div>
+		<h3 class='title-sub'>PHP Code</h3>
+		<section class='code'>
+		    <code>
+			<span class='php-base'>&lt;?php</span><br>
+			<span class='php-function'>function</span> <span class='php-function-id'>appendN</span>(<span class='php-function-parameters'>&$value</span>) { <br>
+&nbsp;&nbsp;<span class='php-dollar'>$</span><span class='php-var'>value</span>++;<br/>
+&nbsp;&nbsp;<span class='php-echo'>echo</span> <span class='php-dollar'>$</span><span class='php-var'>value</span>;<br/>
+}<br>
+			<span class='php-dollar'>$</span><span class='php-var'>n1</span> = <span class='php-arguments'>10</span>;<br/>
+			<span class='php-function'>appendN</span>(<span class='php-dollar'>$</span><span class='php-var'>n1</span>);<br>
+			<span class='php-echo'>echo</span> <span class='php-dollar'>$</span><span class='php-var'>n1</span>;<br/>
+			<span class='php-base'>?&gt;</span>
+		    </code>
+		</section>
+		<h3 class='title-sub'>Result</h3>
+		<section class='result'>
+		    <?php
+		    function appendNumber(&$value) {
+			$value++;
+			echo $value;
+		    }
+		    $n1 = 10;
+		    appendNumber($n1);
+		    echo "<br/>";
+		    echo $n1;
 		    ?>
 		</section>
             </section>

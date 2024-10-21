@@ -257,7 +257,7 @@ background-color:rgba(1,1,1,.5);position:relative;border-radius:50%;`);
 	    let title = element.firstElementChild.innerText.replace(new RegExp(/(\d+)_(\w+)/), "$2");
 	    element.firstElementChild.innerText = title[0].toUpperCase() + title.slice(1);
 	} else {
-	    let title = element.firstElementChild.innerText.replace(new RegExp(/(\d+)_(\w+)_(\w+)/), "$2 $3");
+	    let title = element.firstElementChild.innerText.replace(new RegExp(/(\d+)_(\w+)_(\w+)/g), "$2 $3");
 	    element.firstElementChild.innerText = title[0].toUpperCase() + title.slice(1);
 	}
 
