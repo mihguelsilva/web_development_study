@@ -193,6 +193,9 @@ div.important p, div.danger p {
     font-size: 18pt;
     line-height: 35px;
 }
+div.important ul, div.danger ul, div.important ol, div.danger ol {
+    margin-left: 40px;
+}
 span.php-base {
     color: darkgreen;
 }
