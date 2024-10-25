@@ -62,7 +62,7 @@ header#header, main section.content {
 }
 /*---------main--------------*/
 main section.content {
-    max-width: 1000px;
+    max-width: 65%;
     width: 100%;
     margin-bottom: 10px;
     background-color: #e0ffff;
@@ -269,4 +269,3 @@ table.intro-form select {
 table.intro-form input[type=submit], table.intro-form select, option, table.intro-form label {
     cursor: pointer;
 }
-
