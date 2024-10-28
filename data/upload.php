@@ -48,6 +48,7 @@
 		    move_uploaded_file($tmp_name, 'images' . DIRECTORY_SEPARATOR . "$NAME");
 		};
 	    };
+	    header('location:/pages/module_03/12_upload.php');
 	};
 	?>
     </body>
