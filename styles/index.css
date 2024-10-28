@@ -239,7 +239,8 @@ table.intro-form {
 table.intro-form td {
     padding: 5px;
 }
-table.intro-form input[type=submit], table.intro-form input[type=text], table.intro-form input[type=number] {
+/*table.intro-form input[type=submit], table.intro-form input[type=text], table.intro-form input[type=number] {*/
+table.intro-form input {
     width: 100%;
     height: 35px;
     font-size: 14pt;
