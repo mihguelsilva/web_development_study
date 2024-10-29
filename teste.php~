@@ -1,0 +1,6 @@
+<?php
+$DIR = scandir("/");
+echo "<pre>";
+print_r($DIR);
+echo "</pre>";
+    ?>
