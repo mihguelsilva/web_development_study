@@ -1,0 +1,5 @@
+<?php
+interface NameInterface {
+    public function teste();
+}
+?>

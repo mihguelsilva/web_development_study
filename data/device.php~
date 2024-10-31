@@ -1,0 +1,18 @@
+<?php
+class Device {
+    public $vendor;
+    public $serial_number;
+    public $mac;
+    public $ipv6_support;
+    public $tr069_support;
+    public $ipoe_support;
+    public function __construct($vendor, $serial_number, $mac, $ipv6_support, $tr069_support, $ipoe_support) {
+	$this->vendor = $vendor;
+	$this->serial_number = $serial_number;
+	$this->mac = $mac;
+	$this->ipv6_support = $ipv6_support;
+	$this->tr069_support = $tr069_support;
+	$this->ipoe_support = $ipoe_support;
+    }
+}
+?>

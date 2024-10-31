@@ -1,0 +1,14 @@
+<?php
+require_once 'interface.php';
+
+class Example implements NameInterface {
+    public function teste() {
+    }
+    public function teste2() {
+    }
+    public function teste3() {
+    }
+    public function teste4() {
+    }
+}
+?>

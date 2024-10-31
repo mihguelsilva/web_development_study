@@ -1,0 +1,21 @@
+<?php
+class Calculate {
+    public function sum($n1, $n2) {
+        return $n1 + $n2;
+    }
+    public function sub($n1, $n2) {
+        return $n1 - $n2;
+    }
+    public function mult($n1, $n2) {
+        return $n1 * $n2;
+    }
+    public function div($n1, $n2) {
+        if ($n2 == 0) {
+            return "Error! We can't divide any number per zero!";
+            exit();
+        } else {
+            return $n1 / $n2;
+        }
+    }
+}
+?>

@@ -8,20 +8,15 @@
 	<?php
 	$_DIR = $_SERVER['DOCUMENT_ROOT'];
 	$PERSON =  $_DIR . DIRECTORY_SEPARATOR . "data" . DIRECTORY_SEPARATOR . "person.php";
+	$DEVICE = $_DIR . DIRECTORY_SEPARATOR . "data" . DIRECTORY_SEPARATOR . "device.php";
 	require_once $PERSON;
-	$person1 = new Person();
-	$person1 -> name = "Mihguel";
-	$person1 -> age = 29;
-	$person1 -> gender = "male_cisgender";
-	$person1 -> race = "white";
-	$person1 -> working = false;
-	$person1 -> dating = true;
-	echo "<pre>";
-	print_r($person1);
+	require_once $DEVICE;
+	$device1 = new Device("tplink", "02105234857481", "01:02:fa:f5:b8:ac", true, true, true);
+	$device1->enable_ipv6("2001:db8:cade:f000::/56", false, false, true);
+	$device1->enable_tr069("10.100.200.1", 7547, "acs", "acs");
+	echo "<pre style='font-size:12pt;'>";
+	print_r($device1);
 	echo "</pre>";
-	echo $person1 -> greeting() . " Jonas <br><hr>";
-	echo $person1 -> offensive() . "<br><hr>";
-	echo $person1 -> goodbye();
 	?>
     </body>
 </html>

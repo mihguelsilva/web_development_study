@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+    <head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<title></title>
+	<link rel='stylesheet' href='/styles/index.css'>
+	<link rel='preconnect' href='https://fonts.googleapis.com'>
+	<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+	<link href='https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap' rel='stylesheet'>
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong'>
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+	<script src='/js/index.js'></script>
+    </head>
+    <body name="Encapsulation|Encapsulation|Encapsulation with PHP">
+        <main>
+            <section class='content' id='class'>
+		<h2 class='content' id='interface'>Interface</h2>
+		<p class='content'>
+		    Interface it's like an class with rules and within this interfaces we've method's
+		    names.
+		</p>
+		<p class='content'>
+		    Encapsulate it's protect but it's also hide interior side. Encapsulate it's hide from
+		    user what he doesn't need to know. They'll only receive it's methods, parameters without
+		    knowing how it was implemented and it's complexity.
+		</p>
+		<p class='content'>
+		    It doesn't matter what's inside the code or function, but only if it works.
+		</p>
+		<p class='content'>
+		    Differently from class, an interface:
+		</p>
+		<ul class="content">
+		    <li>Doesn't have attributes</li>
+		    <li>Methods are abstract and then are not implemented</li>
+		    <li>Class is abstract and then are not instantiated</li>
+		    <li>Visibility must always be public</li>
+		</ul>
+		<div class='important'>
+		    <p>
+			Soon enough we'll discuss about class and methods abstract. Abstraction it's
+			use something without knowing it's complexities.
+		    </p>
+		</div>
+		<h3 class='title-sub'>Example</h3>
+		<section class='code'>
+		    <code>
+			<span class='php-arguments'>interface</span> <span class='php-function'>name</span>{<br/>
+&nbsp;&nbsp;<span class='php-arguments'>public</span> <span class='php-function'>function</span> <span class='php-function-id'>name</span>(<span class='php-function-parameters'></span>);<br/>
+&nbsp;&nbsp;<span class='php-arguments'>public</span> <span class='php-function'>function</span> <span class='php-function-id'>name</span>(<span class='php-function-parameters'></span>);<br/>
+&nbsp;&nbsp;<span class='php-arguments'>public</span> <span class='php-function'>function</span> <span class='php-function-id'>name</span>(<span class='php-function-parameters'></span>);<br/>
+}<br>
+		    </code>
+		</section>
+		<p class='content'>
+		    Here, we've got an interface with 3 methods, and within then, we can pass parameters.
+		</p>
+            </section>
+        </main>
+    </body>
+</html>
